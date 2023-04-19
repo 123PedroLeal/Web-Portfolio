@@ -1,4 +1,6 @@
 'use strict'
+let check = document.querySelector(".check");
+
 function showHideMenu()
 {
     let menuVisibility = false;
@@ -22,7 +24,6 @@ function select()
 
 function lenguage()
 {
-    let check = document.querySelector(".check");
     let id = check.checked;
 
     if(id==true)
