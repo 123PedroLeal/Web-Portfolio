@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Pedro Leal</title>
+
+    <!-- Link for the favicon Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    
+    <!-- CDN Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link to the font used on the page from google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Headings & Paragraphs -->
+    <link href="https://fonts.googleapis.com/css2
+    family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+    <!-- Logo-->
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
+
+    <!-- Link to the CSS File -->
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <!-- scripts -->
+    <script defer src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script> 
+    <script defer src="../Js/script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-container">
+        <header>
+            <div class="logo">
+                <a href="#home">Pedro Leal</a>
+            </div>
+
+             <div class="lenguages">
+                <span class="en">Ingles</span>
+                <input type="checkbox" class="check" checked>
+                <span class="es">Español</span>
+             </div>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home" onclick="select()">Inicio</a></li>
+                    <li><a href="#about" onclick="select()">Sobre mí</a></li>
+                    <li><a href="#projects" onclick="select()">Proyectos</a></li>
+                    <li><a href="#skills" onclick="select()">Habilidades</a></li>
+                    <li><a href="#education" onclick="select()">Educación</a></li>
+                    <li><a href="#contact" onclick="select()">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-responsive" onclick="showHideMenu()">
+                <img src="../assets/svg/menu-bar.svg" alt="">
+            </div>
+        </header>
+    </div>
+
+    <!-- Home -->
+    <section id="home" class="home">
+        <div class="banner-content">
+            <figure class="img-content">
+                <img class="img-profile" src="../assets/images/Profile.png" alt="Profile Image">
+            </figure>
+            <h1>Pedro Leal</h1>
+            <h2>Desarrollador Front-End</h2>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/123pedroleal/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/123PedroLeal"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="section-content">
+            <h2>Sobre mí<i class="fa-solid fa-circle-user"></i></h2>
+            <p><span>¡Hola! Soy Pedro Leal.</span> Un desarrollador front-end con experiencia en desarrollo web y móvil. 
+                Poseo conocimientos en HTML, CSS, JavaScript y React, además, soy un buen comunicador tanto en inglés
+                como en español, resolutivo, adaptable y proactivo. Me gusta trabajar en equipo y entender las 
+                necesidades de los clientes para cumplir con sus expectativas. Si buscas a alguien con experiencia 
+                técnica sólida, estoy seguro de que puedo ayudarte a resolver tus problemas de manera efectiva.</p>
+
+            <div class="row">
+                <div class="column">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong>Fecha de nacimiento</strong>
+                            12-27-1997
+                        </li>
+                        <li>
+                            <strong>Telefono</strong>
+                            +54 11-2404-1352
+                        </li>
+                        <li>
+                            <strong>Correo</strong>
+                            pedropeter93.pl@gmail.com
+                        </li>
+                        <li>
+                            <strong>Español</strong>
+                            Nativo
+                        </li>
+                        <li>
+                            <strong>Ingles</strong>
+                            B2 Intermedio Avanzado
+                        </li>
+                        <li>
+                            <strong>Dirección</strong>
+                            Hidalgo 1320 CABA, Argentina.
+                        </li>
+                        <li>
+                            <strong>Cargo</strong>
+                            <span>Freelance</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="column">
+                    <h3>Intereses</h3>
+                    <div class="interests-container">
+
+                        <div class="interest">
+                            <i class="fa-solid fa-book"></i>
+                            <span>Lectura</span>   
+                        </div>
+
+                        <div class="interest">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <span>Ejercicio</span>   
+                        </div>
+                        
+                        <div class="interest">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Estudio</span>   
+                        </div>
+
+                        <div class="interest">
+                            <i class="fa-solid fa-kitchen-set"></i>
+                            <span>Cocina</span>   
+                        </div>
+
+                    </div>
+                </div>         
+            </div>
+            <button onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQJkTbXC0yH4tniJA?e=3Yx2wU';">
+                Mostrar CV <i class="fa-solid fa-eye"></i>
+                <span class="overlay"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <main id="projects" class="projects">
+        <div class="section-content">
+        <h2>Proyectos <i class="fa-solid fa-list-check"></i></h2>
+
+            <div class="project">
+                <div class="project-col img">
+                    <div class="overlay-block">
+                        <img src="../assets/images/Servers.jpg" alt="">
+                        <a href="https://github.com/123PedroLeal/Cloud-Rental-Backend">
+                            <div class="overlay">
+                                <img class="ic-overlay" src="../assets/svg/java.svg" alt="">
+                                <img class="ic-overlay" src="../assets/svg/spring.svg" alt="">
+                                <img class="ic-overlay" src="../assets/svg/git.svg" alt="">
+                            </div>
+                        </a>
+                    </div>   
+                </div>
+                 
+                <div class="project-col details">
+                    <h3>Alquiler Nubes</h3>
+                    <h4>Java - Springboot - Git</h4>
+                    <p><span>Back-End</span> Es una aplicación orientada al servidor que realiza peticiones mediante
+                    un API desarrollada con Java y SpringBoot que realiza las operaciones CRUD a una base de 
+                    datos en H2 a un servidor realizado con Linux en una maquina virtual de Oracle.  
+                    <br><span>Haga click a la imagen más cercana para ver el proyecto en Github</span></p>
+                </div>            
+            </div>
+
+            <div class="project">
+                <div class="project-col img">
+                    <div class="overlay-block">
+                        <img src="../assets/images/Mobile.jpg" alt="">
+                        <a href="https://github.com/123PedroLeal/Java-Mobile-Application">
+                            <div class="overlay">
+                                <img class="ic-overlay" src="../assets/svg/java.svg" alt="">
+                                <img class="ic-overlay" src="../assets/svg/firebase.svg" alt="">
+                                <img class="ic-overlay" src="../assets/svg/xml.svg" alt="">
+                                <img class="ic-overlay" src="../assets/svg/Sql.svg" alt="">
+                                <img class="ic-overlay" src="../assets/svg/git.svg" alt="">
+                                <img class="ic-overlay" src="../assets/svg/scrum.svg" alt="">
+                            </div>
+                        </a>
+                    </div>   
+                </div>
+                 
+                <div class="project-col details">
+                    <h3>Real Food</h3>
+                    <h4>Java - FireBase - XML - SQL - Git - Scrum</h4>
+                    <p><span>Aplicación Móvil</span> Desarrollada con la idea de brindar un servicio sin 
+                    intermediarios a los campesinos y consumidores colombianos permitiendo ubicar a los campesinos
+                    mas cercanos al consumidor facilitandoles el proceso de compra-venta atendiendo asi la necesidad
+                    que presentan los consumidores en colombia debido a la subida de los precios debido a la 
+                    inflacióny permitiendole al campesino ganar mucho más con su producto.
+                    (Proyecto desarrollado en equipo para una Hackathon) 
+                    <br><span>Haga click a la imagen más cercana para ver el proyecto en Github</span></p>
+                </div>            
+            </div>
+        </div>
+    </main>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+        <div class="section-content">
+            <h2>Conocimientos <i class="fa-solid fa-gear"></i></h2>
+                <!-- Technical Skill -->
+            <div class="skill-column">
+                    
+                <div class="skill-row">
+                    <h3>Front-End</h3>
+                        
+                    <div class="skill-container">
+                        <div class="skill">
+                            <span>Html</span>
+                            <img class="skills-icons" src="../assets/svg/html5.svg" alt="">
+                        </div>
+
+                        <div class="skill">
+                            <span>Css</span>
+                            <img class="skills-icons" src="../assets/svg/css3.svg" alt="">
+                        </div>
+
+                        <div class="skill">
+                            <span>Boostrap</span>
+                            <img class="skills-icons" src="../assets/svg/bootstrap.svg" alt="">
+                        </div>
+
+                        <div class="skill">
+                            <span>Javascript</span>
+                            <img class="skills-icons" src="../assets/svg/javascript.svg" alt="">
+                        </div>
+                        
+                        <div class="skill">
+                            <span>React</span>
+                            <img class="skills-icons" src="../assets/svg/react.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-row">
+                    <h3>Back-End</h3>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <span>Sql</span>
+                            <img class="skills-icons" src="../assets/svg/Sql.svg" alt="">
+                        </div>
+                    
+                        <div class="skill">
+                            <span>Node.js</span>
+                            <img class="skills-icons" src="../assets/svg/nodejs.svg" alt="">
+                        </div>
+
+                        <div class="skill">
+                            <span>Java</span>
+                            <img class="skills-icons" src="../assets/svg/java.svg" alt="">
+                        </div>    
+
+                        <div class="skill">
+                            <span>SpringBoot</span>
+                            <img class="skills-icons" src="../assets/svg/spring.svg" alt="">
+                        </div>
+
+                        <div class="skill">
+                            <span>Firebase</span>
+                            <img class="skills-icons" src="../assets/svg/firebase.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-row border-none">
+                    <h3>Otros Conocimientos</h3>
+                    <div class="skill-container">
+                        <div class="skill">
+                            <span>Git</span>
+                            <img src="../assets/svg/git.svg" alt="">
+                        </div>
+
+                        <div class="skill">
+                            <span>Linux</span>
+                            <img src="../assets/svg/linux.svg" alt="">
+                        </div>    
+
+                        <div class="skill">
+                            <span>Scrum</span>
+                            <img src="../assets/svg/scrum.svg" alt="">
+                        </div>
+
+                        <div class="skill">
+                            <span>Chat GPT</span>
+                            <img src="../assets/svg/OpenAi.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="education">
+        <div class="section-content">
+            <h2>Educación <i class="fa-solid fa-building-columns"></i></h2>
+            <div class="row">
+                <div class="column left">
+                    <h3>Titulos <i class="fa-solid fa-graduation-cap"></i></h3>
+                    
+                    <div class="item lft">
+                        <h4><i class="fa-solid fa-industry"></i> Ingeniero Industrial</h4>
+                        <div class="content">
+                            <div class="content-headers">
+                                <span class="institution">Universidad de La Sabana</span>
+                                <span class="date">Junio 2016- Marzo 2022</span>
+                            </div>
+                            <div class="content-ic">
+                                <img src="../assets/svg/java.svg" alt="">
+                                <img src="../assets/svg/arduino.svg" alt="">
+                            </div>
+                        </div>
+                        <p>Es en donde tuve mis primeras clases y conocimientos en el area de la programación
+                            ahí es donde aprendi programación orientada a objetos y automatización con Arduino 
+                            en Java y despues me volvi lider de un grupo de estudio en Java.</p>
+
+                        <button onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQF7X_H9MRSL25xKA?e=02AMjG';">
+                            Mostrar Titulo<i class="fa-solid fa-eye"></i>
+                            <span class="overlay"></span>
+                        </button>
+
+                        <div class="conectorl">
+                            <div class="circlel"></div>
+                        </div>
+                    </div>
+
+                    <div class="item lft">
+                        <h4><i class="fa-solid fa-code"></i> Desarrollo de Software</h4>
+                        <div class="content">
+                            <div class="content-headers">
+                                <span class="institution">Universidad Sergio Arboleda</span>
+                                <span class="date">Mayo 2022 - Deciembre 2022</span>
+                            </div>
+                            <div class="content-ic">
+                                <img src="../assets/svg/java.svg" alt="">
+                                <img src="../assets/svg/spring.svg" alt="">
+                                <img src="../assets/svg/python.svg" alt="">
+                            </div>
+                        </div>
+                        <p>Este fue curso brindado desde el estado colombiano que seguia la metodologia de un
+                            bootcamp durante el curso aprendimos logica de programación con Python, POO en Java
+                            con conexion a bases de datos SQL, un Back-end hecho con Java y SpringBoot para finalizar
+                            con el desarrollo de una aplicacion movil con Java</p>
+
+                        <button onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04J-0UbQ0Z8cDFwTmVI?e=dVUDND';">
+                            Mostrar Titulo<i class="fa-solid fa-eye"></i>
+                            <span class="overlay"></span>
+                        </button>
+
+                        <div class="conectorl">
+                            <div class="circlel"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="column right">
+                    <h3>Certificaciones <i class="fa-sharp fa-solid fa-award"></i></h3>
+
+                    <div class="item rgt">
+                        <h4><i class="fa-sharp fa-solid fa-globe"></i> Desarrollo Web</h4>
+                        <div class="content">
+                            <div class="content-headers">
+                                <span class="institution">Mimo</span>
+                                <span class="date">Enero 2023 - Marzo 2023</span>
+                            </div>
+                            <div class="content-ic">
+                                <img src="../assets/svg/html5.svg" alt="">
+                                <img src="../assets/svg/css3.svg" alt="">
+                                <img src="../assets/svg/javascript.svg" alt="">
+                                <img src="../assets/svg/react.svg" alt="">
+                            </div>
+                        </div>
+                        <p>En este curso fue en donde consolide mis conocimientos sobre HTML,CSS,Javascript,
+                            Dom y React y con esa base realice este portafolio y los proyectos que se iran 
+                            adicionando.</p>
+
+                        <button onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQG6qbtmXJr1kXrhg?e=A4D9RL';">
+                            Mostrar Titulo <i class="fa-solid fa-eye"></i>
+                            <span class="overlay"></span>
+                        </button>
+
+                        <div class="conectorr">
+                            <div class="circler"></div>
+                        </div>
+                    </div>
+
+                    <div class="item rgt">
+                        <h4><i class="fa-solid fa-server"></i> Desarrollo Back-End con Nodejs</h4>
+                        <div class="content">
+                            <div class="content-headers">
+                                <span class="institution">Platzi</span>
+                                <span class="date">Enero 2023 - Today</span>
+                            </div>
+                            <div class="content-ic">
+                                <img src="../assets/svg/javascript.svg" alt="">
+                                <img src="../assets/svg/nodejs.svg" alt="">
+                            </div>
+                        </div>
+                        <p>Este es un curso que me encuentro haciendo en la actualidad para aprender a desarrollar
+                            una aplicacion con Javascript desde el front hasta el Back-end, ya que este se ha vuelto
+                            mí lenguaje preferido.<br> <span>Este curso se encuentra en desarrollo, por lo tanto 
+                            aun no se podra visualizar.</span></p>
+
+                        <button class="block-button">
+                            Mostrar Titulo <i class="fa-solid fa-eye"></i>
+                            <span class="overlay"></span>
+                        </button>
+
+                        <div class="conectorr">
+                            <div class="circler"></div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="section-content">
+            <h2>Contacto <i class="fa-solid fa-address-book"></i></h2>
+            <form action="https://formsubmit.co/pedropeter93.pl@gmail.com" method="POST">    
+                <input type="text" name="name" placeholder="Nombre">
+                <input type="text" name="phone" placeholder="Número Telefonico">
+                <input type="text" name= "email" placeholder="Correo electronico">
+                <textarea name="comments" id="" cols="30" rows="10" placeholder="Comentarios"></textarea>
+
+                <button type="submit">
+                    Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                    <span class="overlay"></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#home" class="back">
+            <i class="fa-solid fa-arrow-up-long"></i>
+        </a>
+
+        <div>
+            <p>Pedro-Leal 2023 &copy; <strong> Hecho con Html - CSS & Javascript</strong> 
+            <i class="fa-solid fa-heart"></i></p>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/123pedroleal/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/123PedroLeal"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
