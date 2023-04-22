@@ -29,7 +29,7 @@ html
 /*Instrucion to set the sizes oh the headers & paragraphs of the webpage*/
 h1
 { 
-    font-size: 4.2rem;
+    font-size: 6rem;
     font-family: var(--headers-font);
 }
 
@@ -257,9 +257,13 @@ header
 
 .home .banner-content
 {
-    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3rem 0;
     background-color: var(--first-background-color);
-    max-width: 40rem;
+    width: 80%;
+    height: auto;
     margin: auto;
     text-align: center;
     border-radius: 4rem;
@@ -267,43 +271,70 @@ header
 
 .home .banner-content .img-profile
 {
-    margin-top: 4rem;
     border: 0.4rem solid var(--contrast-color);
     display: block;
-    width: 90%;
+    width: 30rem;
+    height: auto;
     margin: auto;
     border-radius: 100%;
 }
 
-.home .banner-content h1
+.home .name-position 
 {
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
 }
 
-.home .banner-content h2
+.home .name-position h1
 {
-    font-size: 2.3em;
-    font-weight: normal;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.35rem solid var(--contrast-color);
 }
 
-.home .banner-content .social-media a
+.home .name-position .Front-End-Icons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.home .name-position .Front-End-Icons svg
+{
+    height: auto;
+    width: 6rem;
+    fill: var(--contrast-color);
+}
+
+.home .banner-content .social-media
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.home .banner-content .social-media a 
 {
     color: var(--main-text-color);
-    display: inline-block;
     text-decoration: none;
-    border: 0.1rem solid var(--contrast-color);
-    border-radius: 100%;
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
-    margin: 2rem 0.5rem;
-    transition: 0.5s;
-    font-size: 3rem;
 }
 
-.home .banner-content .social-media a:hover
+.home .banner-content .social-media a svg
 {
-    background-color: var(--contrast-color);
+    width: 6rem;
+    height: auto;
+    fill: var(--main-text-color);
+}
+
+.home .banner-content .social-media svg:hover
+{
+    transition: 0.5s;
+    fill: var(--contrast-color);
+    transform: scale(1.1);
 }
 
 /* About */
