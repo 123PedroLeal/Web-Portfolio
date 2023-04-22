@@ -43,7 +43,7 @@
                 <a href="#home">Pedro Leal</a>
             </div>
 
-             <div class="lenguages">
+             <div id="toggle-lenguages" class="lenguages">
                 <span class="en">English</span>
                 <input type="checkbox" class="check">
                 <span class="es">Spanish</span>
@@ -51,21 +51,20 @@
 
             <nav id="nav">
                 <ul>
-                    <li><a href="#home" onclick="select()">Home</a></li>
-                    <li><a href="#about" onclick="select()">About</a></li>
-                    <li><a href="#projects" onclick="select()">Projects</a></li>
-                    <li><a href="#skills" onclick="select()">Skills</a></li>
-                    <li><a href="#education" onclick="select()">Education</a></li>
-                    <li><a href="#contact" onclick="select()">Contact</a></li>
+                    <li><a href="#home" class="option">Home</a></li>
+                    <li><a href="#about" class="option">About</a></li>
+                    <li><a href="#projects" class="option">Projects</a></li>
+                    <li><a href="#skills" class="option">Skills</a></li>
+                    <li><a href="#education" class="option">Education</a></li>
+                    <li><a href="#contact" class="option">Contact</a></li>
                 </ul>
             </nav>
 
-            <div class="nav-responsive" onclick="showHideMenu()">
+            <div id="nav-responsive" class="nav-responsive">
                 <img src="./assets/svg/menu-bar.svg" alt="">
             </div>
         </header>
     </div>
-
     <!-- Home -->
     <section id="home" class="home">
         <div class="banner-content">
@@ -80,7 +79,6 @@
             </div>
         </div>
     </section>
-
     <!-- About -->
     <section id="about" class="about">
         <div class="section-content">
@@ -90,7 +88,6 @@
                 and Spanish, resourceful, adaptable, and proactive. I enjoy working in a team and understanding 
                 the clients' needs to meet their expectations. If you're looking for someone with solid technical 
                 experience, I'm confident that I can help you effectively solve your problems.</p>
-
             <div class="row">
                 <div class="column">
                     <h3>Personal Info</h3>
@@ -125,41 +122,34 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="column">
                     <h3>Interests</h3>
                     <div class="interests-container">
-
                         <div class="interest">
                             <i class="fa-solid fa-book"></i>
                             <span>Reading</span>   
                         </div>
-
                         <div class="interest">
                             <i class="fa-solid fa-dumbbell"></i>
                             <span>Excercises</span>   
                         </div>
-                        
                         <div class="interest">
                             <i class="fa-solid fa-graduation-cap"></i>
                             <span>Studying</span>   
                         </div>
-
                         <div class="interest">
                             <i class="fa-solid fa-kitchen-set"></i>
                             <span>Cooking</span>   
                         </div>
-
                     </div>
                 </div>         
             </div>
-            <button id="buttonCVEnglish" onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQIKGn56Z1wJP58EA?e=5tWGlT';">
+            <button id="buttonCVEnglish">
                 Show CV <i class="fa-solid fa-eye"></i>
                 <span class="overlay"></span>
             </button>
         </div>
     </section>
-
     <!-- Projects -->
     <main id="projects" class="projects">
         <div class="section-content">
@@ -204,7 +194,7 @@
                 <div class="project-col details">
                     <h3>Farm to Home</h3>
                     <h4>Java - FireBase - XML - SQL - Git - Scrum</h4>
-                    <p> <span>Mobile app</span> developed with the idea of ​​providing support to 
+                    <p> <span>Mobile app</span> developed with the idea of providing support to 
                     Colombian farmers so that they have an application that allows them to sell their products direct way 
                     to consumers, allowing them to earn more and improving a social problem in Colombia due to the 
                     high prices of food. (Theoretical project for Hackathon is not implemented) <br><span>Click the 
@@ -213,45 +203,37 @@
             </div>
         </div>
     </main>
-
     <!-- Skills -->
     <section id="skills" class="skills">
         <div class="section-content">
             <h2>Skills <i class="fa-solid fa-gear"></i></h2>
                 <!-- Technical Skill -->
             <div class="skill-column">
-                    
                 <div class="skill-row">
                     <h3>Front-End</h3>
-                        
                     <div class="skill-container">
                         <div class="skill">
                             <span>Html</span>
                             <img class="skills-icons" src="./assets/svg/html5.svg" alt="">
                         </div>
-
                         <div class="skill">
                             <span>CSS</span>
                             <img class="skills-icons" src="./assets/svg/css3.svg" alt="">
                         </div>
-
                         <div class="skill">
                             <span>Boostrap</span>
                             <img class="skills-icons" src="./assets/svg/bootstrap.svg" alt="">
                         </div>
-
                         <div class="skill">
                             <span>Javascript</span>
                             <img class="skills-icons" src="./assets/svg/javascript.svg" alt="">
                         </div>
-                        
                         <div class="skill">
                             <span>React</span>
                             <img class="skills-icons" src="./assets/svg/react.svg" alt="">
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-row">
                     <h3>Back-End</h3>
                     <div class="skill-container">
@@ -259,29 +241,24 @@
                             <span>Sql</span>
                             <img class="skills-icons" src="./assets/svg/Sql.svg" alt="">
                         </div>
-                    
                         <div class="skill">
                             <span>Node.js</span>
                             <img class="skills-icons" src="./assets/svg/nodejs.svg" alt="">
                         </div>
-
                         <div class="skill">
                             <span>Java</span>
                             <img class="skills-icons" src="./assets/svg/java.svg" alt="">
                         </div>    
-
                         <div class="skill">
                             <span>SpringBoot</span>
                             <img class="skills-icons" src="./assets/svg/spring.svg" alt="">
                         </div>
-
                         <div class="skill">
                             <span>Firebase</span>
                             <img class="skills-icons" src="./assets/svg/firebase.svg" alt="">
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-row border-none">
                     <h3>Other Tech Skills</h3>
                     <div class="skill-container">
@@ -289,17 +266,14 @@
                             <span>Git</span>
                             <img src="./assets/svg/git.svg" alt="">
                         </div>
-
                         <div class="skill">
                             <span>Linux</span>
                             <img src="./assets/svg/linux.svg" alt="">
                         </div>    
-
                         <div class="skill">
                             <span>Scrum</span>
                             <img src="./assets/svg/scrum.svg" alt="">
                         </div>
-
                         <div class="skill">
                             <span>Chat GPT</span>
                             <img src="./assets/svg/OpenAi.svg" alt="">
@@ -309,7 +283,6 @@
             </div>
         </div>
     </section>
-
     <!-- Education -->
     <section id="education" class="education">
         <div class="section-content">
@@ -317,7 +290,6 @@
             <div class="row">
                 <div class="column left">
                     <h3>Degrees <i class="fa-solid fa-graduation-cap"></i></h3>
-                    
                     <div class="item lft">
                         <h4><i class="fa-solid fa-industry"></i> Industrial Engineer</h4>
                         <div class="content">
@@ -330,20 +302,17 @@
                                 <img src="./assets/svg/arduino.svg" alt="">
                             </div>
                         </div>
-                        <p>It is where my first approach to the area of ​​programming where I learned OOP and 
+                        <p>It is where my first approach to the area of programming where I learned OOP and 
                             automation with Arduino in Java and became then leader of a study group in that 
                             lenguage </p>
-
-                        <button onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQF7X_H9MRSL25xKA?e=02AMjG';">
+                        <button id="universityTitle">
                             Display Title <i class="fa-solid fa-eye"></i>
                             <span class="overlay"></span>
                         </button>
-
                         <div class="conectorl">
                             <div class="circlel"></div>
                         </div>
                     </div>
-
                     <div class="item lft">
                         <h4><i class="fa-solid fa-code"></i> Software Development</h4>
                         <div class="content">
@@ -360,22 +329,17 @@
                         <p>This was a course that followed the Bootcamps methodology where we learned programming 
                         logic with Python, OOP in Java with a connection to SQL, how to make a back-end with Java 
                         and SpringBoot and finally make a mobile app in Java.</p>
-
-                        <button onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04J-0UbQ0Z8cDFwTmVI?e=dVUDND';">
+                        <button id="MinTic">
                             Display Title <i class="fa-solid fa-eye"></i>
                             <span class="overlay"></span>
                         </button>
-
                         <div class="conectorl">
                             <div class="circlel"></div>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="column right">
                     <h3>Certifications <i class="fa-sharp fa-solid fa-award"></i></h3>
-
                     <div class="item rgt">
                         <h4><i class="fa-sharp fa-solid fa-globe"></i> Web Development</h4>
                         <div class="content">
@@ -392,17 +356,14 @@
                         </div>
                         <p>This was the course where I learned the knowledge with which I developed this portfolio 
                         and some of the web projects shown here, with the ease that was from the phone and free.</p>
-
-                        <button onclick="window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQG6qbtmXJr1kXrhg?e=A4D9RL';">
+                        <button id="Mimo">
                             Display Title <i class="fa-solid fa-eye"></i>
                             <span class="overlay"></span>
                         </button>
-
                         <div class="conectorr">
                             <div class="circler"></div>
                         </div>
                     </div>
-
                     <div class="item rgt">
                         <h4><i class="fa-solid fa-server"></i> Back-End Development Nodejs</h4>
                         <div class="content">
@@ -419,12 +380,10 @@
                         how to make a backend in what is the most complete language up to now and my favorite 
                         JavaScript. <br> <span>This course is still in development, therefore it will not be 
                         possible to visualize</span></p>
-
                         <button class="block-button">
                             Display Title <i class="fa-solid fa-eye"></i>
                             <span class="overlay"></span>
                         </button>
-
                         <div class="conectorr">
                             <div class="circler"></div>
                         </div>
@@ -433,7 +392,6 @@
             </div>
         </div>
     </section>
-
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="section-content">
@@ -451,18 +409,15 @@
             </form>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <a href="#home" class="back">
             <i class="fa-solid fa-arrow-up-long"></i>
         </a>
-
         <div>
             <p>Pedro-Leal 2023 &copy; <strong> Made with Html - CSS & Javascript</strong> 
             <i class="fa-solid fa-heart"></i></p>
         </div>
-
         <div class="social-media">
             <a href="https://www.linkedin.com/in/123pedroleal/"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="https://github.com/123PedroLeal"><i class="fa-brands fa-github"></i></a>

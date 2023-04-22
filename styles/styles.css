@@ -866,16 +866,19 @@ footer .back
 @media (max-width:980px)
 {
     /* Header */
+    /* Horizontal Options. */
     nav
     {
         display: none;
     }
 
+    /* Vertical Options */
     .nav-responsive
     {
         display: block;
     }
 
+    /* Instructions for JavaScript */
     nav.responsive
     {
         display: block;

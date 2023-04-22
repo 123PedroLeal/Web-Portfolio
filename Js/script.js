@@ -1,30 +1,37 @@
-'use strict'
-let check = document.querySelector(".check");
+// Variables & Constants.
 
-function showHideMenu()
+// Buttons for Options.
+const selectOption = document.querySelector(".option");
+// Button for Responsive Menu.
+const verticalMenu = document.getElementById("nav-responsive");
+// Button for Lenguage.
+const toggleCheck = document.querySelector(".check");
+// Buttons for Titles & Certifications.
+const curriculumEnglish = document.getElementById("buttonCVEnglish");
+const universityTitle = document.getElementById("universityTitle");
+const minticTitle = document.getElementById("MinTic");
+const mimoTitle = document.getElementById("Mimo");
+
+// Functions.
+verticalMenu.addEventListener('click', function showMenu()
 {
-    let menuVisibility = false;
-    if (menuVisibility)
+    const horizontalMenu = document.getElementById("nav");
+    let menuView = false;
+    if (menuView)
     {
-        document.getElementById("nav").classList ="";
-        menuVisibility = false;
+        horizontalMenu.classList ="";
+        menuView = false;
     }
     else
     {
-        document.getElementById("nav").classList ="responsive";
-        menuVisibility = true;
+        horizontalMenu.classList ="responsive";
+        menuView = true;
     }
-}
+});
 
-function select()
+toggleCheck.addEventListener('click', function lenguage()
 {
-    document.getElementById("nav").classList ="";
-    menuVisibility = false;
-}
-
-function lenguage()
-{
-    let id = check.checked;
+    let id = toggleCheck.checked;
 
     if(id==true)
     {
@@ -34,6 +41,25 @@ function lenguage()
     {
         location.href="../index.html"
     }
-}
+});
 
-check.addEventListener('click',lenguage);
+curriculumEnglish.addEventListener('click', function displayCV()
+{
+    window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQIKGn56Z1wJP58EA?e=5tWGlT'; 
+})
+
+universityTitle.addEventListener('click', function displayUniversityTitle()
+{
+    window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQF7X_H9MRSL25xKA?e=02AMjG';
+})
+
+minticTitle.addEventListener('click', function displayMinTic()
+{
+    window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04J-0UbQ0Z8cDFwTmVI?e=dVUDND';
+});
+
+mimoTitle.addEventListener('click', function displayMimo()
+{
+    window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQG6qbtmXJr1kXrhg?e=A4D9RL';
+})
+
