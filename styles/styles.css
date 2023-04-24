@@ -117,6 +117,7 @@ button:hover .overlay
 .section-content
 {
     max-width: 110rem;
+    height: auto;
     margin: auto;
 }
 
@@ -133,7 +134,7 @@ button:hover .overlay
 
 header
 {
-    max-width: 120rem;
+    max-width: 110rem;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -155,13 +156,7 @@ header
     gap: 1rem;
 }
 
-.header-container header .lenguages .en
-{
-    color: var(--main-text-color);
-    font-size: 2rem;
-}
-
-.header-container header .lenguages .es
+.header-container header .lenguages .en , .header-container header .lenguages .es
 {
     color: var(--main-text-color);
     font-size: 2rem;
