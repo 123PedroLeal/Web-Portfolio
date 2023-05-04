@@ -1,12 +1,14 @@
-// 1. Constants.
+// 1. Constants & Variables.
 
-// 1.1 Buttons for Options.
-const selectOption = document.querySelectorAll(".option");
-// 1.2 Button for Responsive Menu.
+// 1.1 Constant that receives the container of the svg icon of the responsive menu.
 const navMenu = document.getElementById("nav-responsive");
-// 1.3 toggleButton for Lenguage.
+// 1.1a Constant that receives the options inside the nav tag in the header.
+const menu = document.querySelector("nav");
+// 1.1b Variable that receives the condition that enables a to change the classlist to show the options in a vertical side view.  
+let menuButton = false;
+// 1.2 toggleButton for Lenguage.
 const toggleCheck = document.querySelector(".check");
-// 1.4 Buttons for Titles & Certifications.
+// 1.3 Buttons for Titles & Certifications.
 const buttons = document.querySelectorAll("button");
 
 // 2.Functions & Events.
@@ -14,11 +16,6 @@ const buttons = document.querySelectorAll("button");
 // 2.1 Event who has a function to display the menu on the right side of the screen in a vertical view style.
 navMenu.addEventListener('click', function showMenu()
 {
-    // constant that receives the nav tag in Html.
-    const menu = document.querySelector("nav");
-    // variable that blocks the view of the responsive button in the page.
-    let menuButton = false;
-
     // If the variable is false
     if (menuButton)
     {
@@ -39,7 +36,6 @@ toggleCheck.addEventListener('click', function lenguage()
 {
     // Variable that changes its value when the user click in them.
     let id = toggleCheck.checked;
-
     // If that button is clicked
     if(id==true)
     {
