@@ -491,103 +491,98 @@ header .nav-responsive img
 }
 
 /* Projects */
+
+/* projects container */
 .projects
 {
     background-color: var(--second-background-color);
     color: var(--main-text-color);
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
 }
 
+/* project title */
 .projects h2
 {
     text-align: center;
-    padding: 2rem 0;
-    margin-bottom: 1rem;
+    margin: 2rem 0;
 }
 
+/* important parts of the paragraphs */
 .projects p span
 {
     color: #A8B5BF;
     font-weight: bold;
 }
 
+/* container of the section of projects */
 .projects .section-content .project
 {
     display: flex;
-    margin-bottom: 2rem;
+    flex-direction: row;
+    padding: 2rem 0rem;
 }
 
+/* division of the container in two columns */
 .projects .section-content .project .project-col
 {
     width: 50%;
-    padding: 0 2rem;
-}
-
-.projects .section-content .project .img
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.projects .section-content .project .details
-{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0.5rem;
 }
 
-.projects .section-content .project .details h3
+/* technologies used */
+.projects .section-content .project .project-col h4
 {
-    margin-bottom: 0.3rem;
-}
-
-.projects .section-content .project .details h4
-{
-    margin-bottom: 1rem;
     color: var(--contrast-color);
 }
 
-.projects .section-content .project .project-col img
-{
-    width: 90%;
-    height: auto;
-    cursor: pointer;
-    border: 0.2rem solid var(--contrast-color);
-    border-radius: 5rem;
-}
-
+/* overlay container */
 .projects .section-content .project .img .overlay-block
 {
     position: relative;
 }
 
+/* images of the projects */
+.projects .section-content .project .project-col img
+{
+    width: 40rem;
+    height: 25rem;
+    cursor: pointer;
+    border: 0.2rem solid var(--contrast-color);
+    border-radius: 5rem;
+}
+
+/* overlay icon container */
 .projects .section-content .project .img .overlay-block .overlay
 {
     position: absolute;
     top: 0;
-    width: 90%;
-    height: 100%;
-    background: linear-gradient(rgba(24, 27, 29, 1),rgba(24, 27, 29, 1));
     display: flex;
     gap: 2rem;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    transition: 1s;
-    opacity: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 5rem;
     border: 0.2rem solid var(--contrast-color);
+    background: linear-gradient(rgba(24, 27, 29, 1),rgba(24, 27, 29, 1));
+    transition: 1s;
+    opacity: 0;
     cursor: pointer;
 }
 
+/* icon properties */
 .projects .section-content .project .img .overlay-block .overlay .ic-overlay
 {
     height: 8rem;
     width: 8rem;
 }
 
+/* overlay animation */
 .projects .section-content .project .img .overlay-block .overlay:hover
 {
     opacity: 1;
