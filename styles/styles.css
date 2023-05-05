@@ -77,6 +77,15 @@ table,input,textarea
 
 /* Equal objects on the web*/
 
+/*Standard sizes of every section of the web-page.*/
+.section-content
+{
+    max-width: 90vw;
+    height: auto;
+    margin: auto;
+}
+
+/* Style of every button on the webpage. */
 button
 {
     cursor: pointer;
@@ -89,9 +98,10 @@ button
     font-size: 1.6rem;
     color: var(--main-text-color);
     position: relative;
-    z-index: 10;
+    z-index: 1;
 }
 
+/* Style of the animation on every button on the webpage. */
 button .overlay
 {
     position: absolute;
@@ -104,71 +114,66 @@ button .overlay
     transition: 1s;
 }
 
+/* Instruction that display the animation when the user put the mouse on the button. */
 button:hover .overlay
 {
     width: 100%;
 }
 
+/* Instruction to block one button to be displayed */
 .block-button
 {
     display: none;
 }
 
-.section-content
-{
-    max-width: 110rem;
-    height: auto;
-    margin: auto;
-}
-
-/*Header*/
-.header-container
+/* 1.Header */
+header
 {
     background: var(--first-background-color);
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
     width: 100%;
-}
-
-header
-{
-    max-width: 110rem;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 1.5rem 1rem;
+    z-index: 10;
 }
 
-.header-container header .logo a
+/* My Logo. */
+header .logo a
 {
     font-family: var(--logo-font);
     color: var(--contrast-color);
     font-weight: bold;
-    font-size: 2.8rem;
+    font-size: 3rem;
 }
 
-.header-container header .lenguages
+/* Lenguage toggle section.*/
+
+/* Container */
+header .lenguages
 {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
-.header-container header .lenguages .en , .header-container header .lenguages .es
+/* Text of the language options. */
+header .lenguages .option
 {
     color: var(--main-text-color);
     font-size: 2rem;
 }
 
-.header-container header .lenguages .check
+/* Check button as an input tag on the webpage */
+header .lenguages .check
 {
     position: relative;
     width: 5rem;
 }
 
-.header-container header .lenguages .check:before
+/* Oval above the check button */
+header .lenguages .check:before
 {
     content: '';
     position: absolute;
@@ -178,51 +183,61 @@ header
     border-radius: 2.5rem;
 }
 
-.header-container header .lenguages .check:after
+/* Ball inside of the oval */
+header .lenguages .check:after
 {
     content: '';
     position: absolute;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: var(--main-text-color);
     border-radius: 2.5rem;
-    transition: 0.25s;
+    background-color: var(--main-text-color);
     border: 0.2rem solid var(--contrast-color);
     box-sizing: border-box;
+
+    transition: 0.25s;
 }
 
-.header-container header .lenguages .check:checked:before
+/* Instruction that shows the display of the toggle button before the user makes a click. */
+header .lenguages .check:checked:before
 {
     background-color: var(--main-text-color);
 }
 
-.header-container header .lenguages .check:checked:after
+/* Instruction that shows the display of the toggle button after the user makes a click in it. */
+header .lenguages .check:checked:after
 {
     left: 2.5rem;
     background-color: var(--contrast-color);
     border: 0.2rem solid var(--main-text-color);
 }
 
-.header-container header nav ul
+/* 1c Lenguage toggle section. */
+
+/* Container of the options to navigate on the web page */
+header nav ul
 {
     display: flex;
+    gap: 1.4rem;
 }
 
-.header-container header nav ul a
+/* Container of the options to navigate on the web page*/
+header nav ul a
 {
     text-align: none;
     color: var(--main-text-color);
-    margin: 0 0.5rem;
-    padding: 0.3rem;
     transition: 0.5s;
 }
 
-.header-container header nav ul a:hover
+/* animation of the mouse near the text of the link */
+header nav ul a:hover
 {
     color: var(--contrast-color);
+    font-size: 2.15rem;
 }
 
-.nav-responsive
+/* Container of icon of options */
+header .nav-responsive
 {
     background-color: var(--contrast-color);
     color: var(--main-text-color);
@@ -232,48 +247,54 @@ header
     display: none;
 }
 
-.nav-responsive img
+/* Icon of options */
+header .nav-responsive img
 {
     height: 3.5rem;
     width: 3.5rem;
 }
 
-/* Home */
+/* 2. Home */
+
+/* Section and background */
 .home
 {
     background: linear-gradient(rgba(30,35,38,.8), rgba(30,35,38,1)), url(../assets/images/Background-home.jpg);
     background-size: cover;
-    height: 120vh;
     color: var(--main-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.home .banner-content
+/* Container of the banner */
+.home .banner
 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 3rem 0;
+    border-radius: 4rem;
     background-color: var(--first-background-color);
-    width: 80%;
+    width: 85%;
     height: auto;
     margin: auto;
     text-align: center;
-    border-radius: 4rem;
 }
 
-.home .banner-content .img-profile
+/* My profile image */
+.home .banner .img-profile
 {
-    border: 0.4rem solid var(--contrast-color);
     display: block;
     width: 30rem;
     height: auto;
     margin: auto;
     border-radius: 100%;
+    border: 0.4rem solid var(--contrast-color);
 }
 
+/* Name and position */
 .home .name-position 
 {
     display: flex;
@@ -281,12 +302,13 @@ header
     gap: 0.7rem;
 }
 
+/* Name */
 .home .name-position h1
 {
     padding-bottom: 0.3rem;
     border-bottom: 0.35rem solid var(--contrast-color);
 }
-
+/* Icons container */
 .home .name-position .Front-End-Icons
 {
     display: flex;
@@ -296,6 +318,7 @@ header
     gap: 1rem;
 }
 
+/* Icons */
 .home .name-position .Front-End-Icons svg
 {
     height: auto;
@@ -303,7 +326,8 @@ header
     fill: var(--contrast-color);
 }
 
-.home .banner-content .social-media
+/* Social-media container */
+.home .banner .social-media
 {
     display: flex;
     flex-direction: column;
@@ -312,85 +336,110 @@ header
     gap: 2rem;
 }
 
-.home .banner-content .social-media a 
+/* Links Container */
+.home .banner .social-media a 
 {
     color: var(--main-text-color);
     text-decoration: none;
+    width: 7rem;
+    height: 7rem;
+    border: 0.12rem solid var(--main-text-color);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
-.home .banner-content .social-media a svg
+/* Social-media Icons */
+.home .banner .social-media a svg
 {
-    width: 6rem;
+    width: 5rem;
     height: auto;
     fill: var(--main-text-color);
 }
 
-.home .banner-content .social-media svg:hover
+/* Animation of the buttons in the webpage */
+.home .banner .social-media a:hover
 {
     transition: 0.5s;
-    fill: var(--contrast-color);
+    background-color: var(--contrast-color);
     transform: scale(1.1);
 }
 
 /* About */
+
+/* Container of the about section */
 .about
 {
     background-color: var(--first-background-color);
     color: var(--main-text-color);
-    padding: 5rem 2rem;
+    padding: 2rem 1rem;
 }
 
+/* About Title */
 .about h2
 {
     text-align: center;
     padding: 2rem 0;
 }
 
+/* Title Icon */
 .about h2 i
 {
     margin: 0 1rem;
 }
 
+/* About me Paragraph */
 .about p
 {
     line-height: 2.2rem;
     margin-bottom: 2rem;
 }
 
+/* Important things on my text */
 .about p span
 {
     color: var(--contrast-color);
     font-weight: bold;
 }
 
+/* Container of personal info and interest*/
 .about .row
 {
     display: flex;
 }
 
+/* Separation in two columns of 50% width each one */
 .about .row .column
 {
     width: 50%;
 }
 
+/* Headers of each column */
 .about .row .column h3
 {
     margin-bottom: 2.5rem;
     text-align: center;
 }
 
-.about .row .column ul li 
+/* Container of the list of Personal info */
+.about .row .column ul
 {
-    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
+/* Name of the attribute */
 .about .row .column ul li strong
 {
     display: inline-block;
     color: var(--contrast-color);
-    width: 13rem;
+    width: 8rem;
+    margin: 0rem 1rem;
 }
 
+/* Special block of the position */
 .about .row .column ul li span
 {
     background-color: var(--contrast-color);
@@ -399,6 +448,7 @@ header
     border-radius: 0.5rem;
 }
 
+/* Container of interests */
 .about .row .column .interests-container
 {
     display: flex;
@@ -406,30 +456,34 @@ header
     justify-content: center;
 }
 
+/* interest icons containers*/
 .about .row .column .interests-container .interest
 {
-    width: 10rem;
-    height: 10rem;
-    background-color: var(--second-background-color);
-    border-radius: 1rem;
-    margin: 0 1.5rem 1.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--second-background-color);
+    border-radius: 1rem;
+    margin: 0 1.5rem 1.5rem 0;
 }
 
+/* Animation of the mouse */
 .about .row .column .interests-container .interest:hover
 {
     background-color: var(--contrast-color);
 }
 
+/* Name of the icons */
 .about .row .column .interests-container .interest span
 {
     font-size: 1.8rem;
 }
 
+/* Icons */
 .about .row .column .interests-container .interest i
 {
     font-size: 3rem;
@@ -899,7 +953,7 @@ footer .back
     }
 
     /* Vertical Options */
-    .nav-responsive
+    header .nav-responsive
     {
         display: block;
     }
@@ -907,9 +961,10 @@ footer .back
     /* Instructions for JavaScript */
     nav.responsive
     {
-        display: block;
+        display: flex;
+        flex-direction: column;
         position: absolute;
-        right: 0;
+        right: 2.5rem;
         top: 7.5rem;
         background-color: var(--second-background-color);
         width: 18rem;
