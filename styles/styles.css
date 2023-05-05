@@ -606,29 +606,26 @@ header .nav-responsive img
     padding-bottom: 2rem;
 }
 
+/* Container of skills columns */
 .skills .skill-row
 {
     display: flex;
-    flex-direction: row;
-    /* gap: 3rem; */
 }
 
+/* Format of the three columns */
 .skills .skill-column
 {
     width: 30vw;
     text-align: center;
 }
 
-.skills .skill-row .skill-column .border-none
-{
-    border: none;
-}
-
+/* Title of each column */
 .skills .skill-row .skill-column h3
 {
     margin-bottom: 2rem;
 }
 
+/* Container of the containers of icons */
 .skills .skill-row .skill-column .skill-container
 {
     display: flex;
@@ -640,81 +637,94 @@ header .nav-responsive img
     gap: 1rem; 
 }
 
+/* Container of the icon & name of the technology. */
 .skills .skill-row .skill-column .skill-container .skill
 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
     width: 14rem;
     height: 14rem;
     background-color: var(--second-background-color);
     border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
     transition: 0.3s;
 }
 
+/* Animation when the mouse is above the button. */
 .skills .skill-row .skill-column .skill-container .skill:hover
 {
     background-color: var(--contrast-color);
 }
 
+/* Name of each icon. */
 .skills .skill-row .skill-column .skill-container .skill span
 {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-.skills .skill-row .skill-column .skill-container .skill img , .skills .skill-row .skill-column .skill-container .skill svg
+/* Instruccion for the icons */
+.skills .skill-row .skill-column .skill-container .skill svg,
+.skills .skill-row .skill-column .skill-container .skill svg .spring-content 
 {
     fill: var(--main-text-color);
     height: 8rem;
     width: 8rem;
 }
 
-/* Education */
+/* 6. Education */
 
+/* Container of the education section. */
 .education
 {
     background-color: var(--second-background-color);
     color: var(--main-text-color);
-    padding: 5rem 2rem;
+    padding: 2rem 2rem;
 }
-
+/* Education Title. */
 .education h2
 {
     text-align: center;
     padding: 2rem 0;
 }
 
+/* Container of the 2 columns of education. */
 .education .row
 {
     display: flex;
     justify-content: space-between;
 }
 
+/* Design of the columns of the section. */
 .education .row .column
 {
     width: 49%;
     padding: 0 2rem;
 }
 
+/* Title of the column. */
 .education .row .column h3
 {
     text-align: center;
     margin-bottom: 1rem;
 }
 
+/* Column of the left "Degrees". */
 .education .row .left
 {
     border-right: 0.2rem solid var(--first-background-color);
 }
 
+/* Column of the right "Certifications". */
 .education .row .right
 {
     border-left: 0.2rem solid var(--first-background-color);
 }
 
+/* Containers of the education blocks. */
 .education .row .item
 {
     display: flex;
@@ -727,76 +737,88 @@ header .nav-responsive img
     position: relative;
 }
 
+/* Container of the title and icons. */
 .education .row .item .content
 {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
+/* Container of only the titles. */
 .education .row .item .content .content-headers
 {
     display: flex;
     flex-direction: column;
 }
 
+/* Container of only the icons. */
 .education .row .item .content .content-ic
 {
     display: flex;
     gap: 1rem;
 }
 
-.education .row .item .content img
+/* Icons of technologies used. */
+.education .row .item .content svg ,
+.education .row .item .content svg .spring-content
 {
-    height: 4.5rem;
-    width: 4.5rem;
+    fill: var(--main-text-color);
+    height: 5rem;
+    width: 5rem;
 }
 
+/* Name of the title */
 .education .row .item h4
 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
+/* Name of the Institution */
 .education .row .item .institution
 {
     color: var(--contrast-color);
     font-size: 2.2rem;
     font-weight: bold;
-    display: block;
 }
 
+/* Dates of begining and ending */
 .education .row .item .date
 {
-    display: block;
     color: var(--contrast-color);
     font-size: 1.6rem;
     margin-bottom: 1rem;
 }
 
+/* Important parts of the text. */
 .education .row .item span
 {
     color: var(--contrast-color);
     font-weight: bold;
 }
 
+/* Paragraphs */
 .education .row .item p
 {
     line-height: 2.4rem;
 }
 
+/* Border and spacing left */
 .education .row .lft
 {
     border-right: 0.2rem solid var(--contrast-color);
     margin-right: 2rem;
 }
 
+/* Border and spacing right */
 .education .row .rgt
 {
     border-left: 0.2rem solid var(--contrast-color);
     margin-left: 2rem;
 }
 
+/* Line who joins the circle and the left border */
 .education .row .item .conectorl
 {
     height: 0.2rem;
@@ -808,6 +830,7 @@ header .nav-responsive img
     z-index: 5;
 }
 
+/* Cirle of the left block */
 .education .row .item .conectorl .circlel
 {
     display: block;
@@ -820,6 +843,7 @@ header .nav-responsive img
     bottom: 0.4rem;
 }
 
+/* Line who joins the circle and the right border */
 .education .row .item .conectorr
 {
     height: 0.2rem;
@@ -831,6 +855,7 @@ header .nav-responsive img
     z-index: 5;
 }
 
+/* Cirle of the right block */
 .education .row .item .conectorr .circler
 {
     display: block;
@@ -843,8 +868,9 @@ header .nav-responsive img
     bottom: 0.4rem;
 }
 
-/*Contact*/
+/* 7.Contact*/
 
+/* Contact container */
 .contact
 {
     background: linear-gradient(rgba(30,35,38,.8), rgba(30,35,38,1)), url(../assets/images/background-contact.jpg);
@@ -854,6 +880,7 @@ header .nav-responsive img
     padding: 5rem 0rem;
 }
 
+/* Tittle of the contact section */
 .contact .section-content h2
 {
     text-align: center;
