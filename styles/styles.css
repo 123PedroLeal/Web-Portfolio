@@ -274,10 +274,11 @@ header .nav-responsive img
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 3rem 0;
-    border-radius: 4rem;
+    padding: 3rem;
     background-color: var(--first-background-color);
-    width: 85%;
+    border-radius: 4rem;
+    max-width: 70vw; 
+    width: 100%; 
     height: auto;
     margin: auto;
     text-align: center;
@@ -287,7 +288,8 @@ header .nav-responsive img
 .home .banner .img-profile
 {
     display: block;
-    width: 30rem;
+    height: auto;
+    width: 20vw;
     height: auto;
     margin: auto;
     border-radius: 100%;
@@ -305,8 +307,14 @@ header .nav-responsive img
 /* Name */
 .home .name-position h1
 {
+    font-size: 5vw;
     padding-bottom: 0.3rem;
     border-bottom: 0.35rem solid var(--contrast-color);
+}
+
+.home .name-position h2
+{
+    font-size: 3vw;
 }
 /* Icons container */
 .home .name-position .Front-End-Icons
@@ -322,7 +330,7 @@ header .nav-responsive img
 .home .name-position .Front-End-Icons svg
 {
     height: auto;
-    width: 6rem;
+    width: 5vw;
     fill: var(--contrast-color);
 }
 
@@ -339,21 +347,21 @@ header .nav-responsive img
 /* Links Container */
 .home .banner .social-media a 
 {
-    color: var(--main-text-color);
-    text-decoration: none;
-    width: 7rem;
-    height: 7rem;
-    border: 0.12rem solid var(--main-text-color);
-    border-radius: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
+    color: var(--main-text-color);
+    text-decoration: none;
+    width: 5.5vw;
+    height: 5.5vw;
+    border: 0.12rem solid var(--main-text-color);
+    border-radius: 100%;
 }
 
 /* Social-media Icons */
 .home .banner .social-media a svg
 {
-    width: 5rem;
+    width: 4vw;
     height: auto;
     fill: var(--main-text-color);
 }
@@ -896,18 +904,21 @@ header .nav-responsive img
     position: relative;
 }
 
+/* Styles of the inputs */
 .contact .section-content input, .contact .section-content textarea
 {
     display: block;
-    width: 95%;
+    width: 90vw;
     padding: 1.8rem;
     border: none;
     margin-bottom: 2rem;
     background-color: var(--second-background-color);
     color: var(--main-text-color);
     font-size: 1.8rem;
+    resize: none;
 }
 
+/* Instructions to animate the inputs */
 .contact .section-content input:focus, .contact .section-content textarea:focus
 {
     border-color: var(--contrast-color);
@@ -916,8 +927,14 @@ header .nav-responsive img
 
 /* Footer */
 
+/* Footer Container */
 footer
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
     background-color: var(--second-background-color);
     color: var(--main-text-color);
     padding: 5rem 0rem 3rem 0rem;
@@ -926,31 +943,51 @@ footer
     width: 100%;
 }
 
+/* Text of the footer */
+footer .footer-text span
+{
+    font-weight: bold;
+}
+
+/* Social media container */
 footer .social-media
 {
-    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
+/* Container of the Icons */
 footer .social-media a
 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     color: var(--main-text-color);
-    display: inline-block;
     text-decoration: none;
-    border: 0.1rem solid var(--contrast-color);
+    width: 7rem;
+    height: 7rem;
+    border: 0.12rem solid var(--main-text-color);
     border-radius: 100%;
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
-    margin: 2rem 0.5rem;
-    transition: 0.5s;
-    font-size: 3rem;
 }
 
+/* Properties of the Icons */
+footer .social-media a svg
+{
+    width: 5rem;
+    height: auto;
+    fill: var(--main-text-color);
+}
+
+/* Animations of the icons */
 footer .social-media a:hover
 {
     background-color: var(--contrast-color);
+    transform: scale(1.1);
 }
 
+/* Button to come back to the home section. */
 footer .back
 {
     display: block;
@@ -968,23 +1005,23 @@ footer .back
 }
 
 /* Responsive */
-
 @media (max-width:980px)
 {
     /* Header */
+
     /* Horizontal Options. */
     nav
     {
         display: none;
     }
 
-    /* Vertical Options */
+    /* Vertical Options Icon */
     header .nav-responsive
     {
         display: block;
     }
 
-    /* Instructions for JavaScript */
+    /* Instructions to display from JavaScript the vertical options */
     nav.responsive
     {
         display: flex;
@@ -996,11 +1033,13 @@ footer .back
         width: 18rem;
     }
 
+    /* Container of the list */
     nav.responsive ul
     {
         display: block !important;
     }
 
+    /* Style of the list elements */
     nav.responsive ul li
     {
         border-bottom: 0.1rem solid var(--main-text-color);
@@ -1008,6 +1047,22 @@ footer .back
         text-align: center;
     }
 
+    /* Home */
+    .home .banner
+    { 
+        margin-top: 10rem;
+        flex-direction: column;
+        justify-content: center;
+        width: 40vw;
+        height: 80vh;
+        gap: 1.5rem;
+    }
+
+    .home .banner .social-media
+    {
+        flex-direction: row;
+    }
+    /* Education */
     .education .row .item .content
     {
         flex-direction: column;
