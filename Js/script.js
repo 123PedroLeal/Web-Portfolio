@@ -79,4 +79,3 @@ buttons.forEach(function allButtons(button)
   });
 
 
-

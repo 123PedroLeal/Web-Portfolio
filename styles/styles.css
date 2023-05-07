@@ -58,7 +58,7 @@ p, li, a
     list-style: none;
 }
 
-span
+span, label
 {
     font-size: 2rem;
     font-family: var(--paragraphs-font);
@@ -212,7 +212,7 @@ header .lenguages .check:checked:after
     border: 0.2rem solid var(--main-text-color);
 }
 
-/* 1c Lenguage toggle section. */
+/* Navigation section. */
 
 /* Container of the options to navigate on the web page */
 header nav ul
@@ -431,7 +431,7 @@ header .nav-responsive img
 }
 
 /* Container of the list of Personal info */
-.about .row .column ul
+.about .row .column .my-information
 {
     display: flex;
     flex-direction: column;
@@ -439,7 +439,7 @@ header .nav-responsive img
 }
 
 /* Name of the attribute */
-.about .row .column ul li strong
+.about .row .column .my-information li strong
 {
     display: inline-block;
     color: var(--contrast-color);
@@ -448,7 +448,7 @@ header .nav-responsive img
 }
 
 /* Special block of the position */
-.about .row .column ul li span
+.about .row .column .my-information li span
 {
     background-color: var(--contrast-color);
     padding: 0.5rem;
@@ -554,8 +554,11 @@ header .nav-responsive img
 }
 
 /* images of the projects */
-.projects .section-content .project .project-col img
+.projects .section-content .project .project-col img,
+.projects .section-content .project .project-col svg,
+.projects .section-content .project .project-col svg .spring-content
 {
+    fill: var(--main-text-color);
     width: 40rem;
     height: 25rem;
     cursor: pointer;
