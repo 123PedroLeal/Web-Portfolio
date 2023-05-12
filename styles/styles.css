@@ -154,8 +154,9 @@ header .logo a
 /* Container */
 header .lenguages
 {
-    display: flex;
-    gap: 1.2rem;
+    display: none;
+    /* display: flex;
+    gap: 1.2rem; */
 }
 
 /* Text of the language options. */
@@ -261,40 +262,39 @@ header .nav-responsive img
 {
     background: linear-gradient(rgba(30,35,38,.8), rgba(30,35,38,1)), url(../assets/images/Background-home.jpg);
     background-size: cover;
+    height: 100vh;
     color: var(--main-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 /* Container of the banner */
 .home .banner
 {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    padding: 3rem;
+    padding: 2rem;
     background-color: var(--first-background-color);
     border-radius: 4rem;
-    max-width: 70vw; 
-    width: 100%; 
-    height: auto;
+    max-width: 80%;
+    width: 90rem;
+    height: 50%;
     margin: auto;
     text-align: center;
 }
 
-/* My profile image */
+/* My profile image */ 
+
 .home .banner .img-profile
 {
-    display: block;
     height: auto;
-    width: 20vw;
-    height: auto;
-    margin: auto;
+    width: 25rem;
     border-radius: 100%;
     border: 0.4rem solid var(--contrast-color);
 }
+
 
 /* Name and position */
 .home .name-position 
@@ -307,15 +307,10 @@ header .nav-responsive img
 /* Name */
 .home .name-position h1
 {
-    font-size: 5vw;
     padding-bottom: 0.3rem;
     border-bottom: 0.35rem solid var(--contrast-color);
 }
 
-.home .name-position h2
-{
-    font-size: 3vw;
-}
 /* Icons container */
 .home .name-position .Front-End-Icons
 {
@@ -330,7 +325,7 @@ header .nav-responsive img
 .home .name-position .Front-End-Icons svg
 {
     height: auto;
-    width: 5vw;
+    width: 6rem;
     fill: var(--contrast-color);
 }
 
@@ -340,6 +335,7 @@ header .nav-responsive img
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
 }
@@ -347,13 +343,13 @@ header .nav-responsive img
 /* Links Container */
 .home .banner .social-media a 
 {
+    width: 6rem;
+    height: 6rem;
     display: flex;
     justify-content: center;
     align-content: center;
     color: var(--main-text-color);
     text-decoration: none;
-    width: 5.5vw;
-    height: 5.5vw;
     border: 0.12rem solid var(--main-text-color);
     border-radius: 100%;
 }
@@ -361,7 +357,7 @@ header .nav-responsive img
 /* Social-media Icons */
 .home .banner .social-media a svg
 {
-    width: 4vw;
+    width: 4rem;
     height: auto;
     fill: var(--main-text-color);
 }
@@ -1050,21 +1046,52 @@ footer .back
         text-align: center;
     }
 
-    /* Home */
     .home .banner
-    { 
+    {
         margin-top: 10rem;
         flex-direction: column;
-        justify-content: center;
-        width: 40vw;
-        height: 80vh;
-        gap: 1.5rem;
+        height: 80%;
+        max-width: 80%;
+        width: 45%;
+        justify-content: space-between;
+    }
+
+    .home .banner .img-profile
+    {
+        width: 20rem;
+    }
+
+    .home .banner .name-position h1
+    {
+        font-size: 5rem;
+    }
+
+    .home .banner .name-position h2
+    {
+        font-size: 3rem;
+    }
+
+    .home .name-position .Front-End-Icons svg
+    {
+        width: 4.2rem;
     }
 
     .home .banner .social-media
     {
         flex-direction: row;
     }
+
+    .home .banner .social-media a 
+    {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .home .banner .social-media a svg
+    {
+        width: 3rem;
+    }
+
     /* Education */
     .education .row .item .content
     {
@@ -1096,13 +1123,19 @@ footer .back
     {
         width: 100%;
     }
+
     /* Skills */
     .skills
     {
         max-height: fit-content;
     }
 
-    .skills .skill-column .skill-row
+    .skills .skill-row
+    {
+        flex-direction: column;
+    }
+
+    .skills .skill-row .skill-column 
     {
         text-align: center;
         border-right: none;
@@ -1110,7 +1143,7 @@ footer .back
         margin-bottom: 4rem;
     }
 
-    .skills .skill-column .skill-row h3
+    .skills .skill-row .skill-column h3
     {
         margin: 2rem 0rem
     }
@@ -1124,7 +1157,7 @@ footer .back
 
 }
 
-@media (max-width:700px)
+@media (max-width:800px)
 {
     /* About */
     .about .section-content p
@@ -1243,11 +1276,30 @@ footer .back
     }
 }
 
+@media (max-width:720px)
+{
+    .home .banner
+    {
+        width: 60%;
+    }
+
+}
+
 @media (max-width:550px)
 {
+    header .logo a
+    {
+        display: none;
+    }
+
     .header-container header .logo
     {
         display: none;
+    }
+
+    .home .banner
+    {
+        width: 70%;
     }
 
     /* Projects */
@@ -1259,6 +1311,28 @@ footer .back
 
 }
 
+@media (max-width:450px)
+{
+    .home .banner
+    {
+        width: 95%;
+    }
+
+    .home .banner .name-position h1
+    {
+        font-size: 4.2rem;
+    }
+
+    .home .banner .name-position h2
+    {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width:360px)
+{
+    
+}
 
 
 
