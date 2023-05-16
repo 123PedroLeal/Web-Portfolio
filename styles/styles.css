@@ -260,7 +260,7 @@ header .nav-responsive img
 /* Section and background */
 .home
 {
-    background: linear-gradient(rgba(30,35,38,.8), rgba(30,35,38,1)), url(../assets/images/Background-home.jpg);
+    background: linear-gradient(rgba(30,35,38,.8), rgba(30,35,38,1)), url(../assets/images/Background-home.webp);
     background-size: cover;
     height: 100vh;
     color: var(--main-text-color);
@@ -880,7 +880,7 @@ header .nav-responsive img
 /* Contact container */
 .contact
 {
-    background: linear-gradient(rgba(30,35,38,.8), rgba(30,35,38,1)), url(../assets/images/background-contact.jpg);
+    background: linear-gradient(rgba(30,35,38,.8), rgba(30,35,38,1)), url(../assets/images/background-contact.webp);
     background-size: cover;
     background-color: var(--first-background-color);
     color: var(--main-text-color);
