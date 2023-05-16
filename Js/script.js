@@ -58,7 +58,7 @@ buttons.forEach(function allButtons(button)
         // Show my CV.
         if(e.target.id === "buttonCVEnglish") 
         {
-            window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQIKGn56Z1wJP58EA?e=5tWGlT';
+            window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYRK-81q-qGVJ4c-xg?e=5la06o';
         }
         // Show my Degree.
         else if (e.target.id === "universityTitle") 
