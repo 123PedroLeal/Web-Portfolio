@@ -1,21 +1,37 @@
-// 1. Constants & Variables.
+'use strict.'
+// 1. Constants & Variables of the DOM.
 
 // 1.1 Constant that receives the container of the svg icon of the responsive menu.
 const navMenu = document.getElementById("nav-responsive");
-// 1.1a Constant that receives the options inside the nav tag in the header.
+// 1.2 Constant that receives the options inside the nav tag in the header.
 const menu = document.querySelector("nav");
-// 1.1b Variable that receives the condition that enables a to change the classlist to show the options in a vertical side view.  
-let menuButton = false;
-// 1.2 toggleButton for Lenguage.
+
+// 1.3 toggleButton for Lenguage.
 const toggleCheck = document.querySelector(".check");
-// 1.3 Buttons for Titles & Certifications.
+
+// 1.4 Buttons for Titles & Certifications.
 const buttons = document.querySelectorAll("button");
+
+const tab = document.querySelectorAll(".tab-option");
+const projectBlock = document.querySelectorAll(".carousel");
+
+// 1.5 Accordion block of information.
+const accordionBlocks = document.querySelectorAll(".accordion-block");
+// 1.6 Accordion header to make the click on.
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+// 1.8 Slider of projects.
+const slider = document.querySelector(".slider");
+// 1.9 Options of the to select the project inside the slider.
+const option = document.querySelectorAll(".slide-option");
 
 // 2.Functions & Events.
 
 // 2.1 Event who has a function to display the menu on the right side of the screen in a vertical view style.
 navMenu.addEventListener('click', function showMenu()
 {
+    // Variable that receives the condition that enables a to change the classlist to show the options in a vertical side view.  
+    let menuButton = false;
     // If the variable is false
     if (menuButton)
     {
@@ -49,7 +65,7 @@ toggleCheck.addEventListener('click', function lenguage()
     }
 });
 
-// 2.3 For each cycle that is going to receive all the buttons on the webpage. 
+// 2.3 For each to receive an event of all the buttons on the webpage. 
 buttons.forEach(function allButtons(button) 
 {
     // Event that has a function that receives the event of the buttons when they are clicked.
@@ -76,6 +92,58 @@ buttons.forEach(function allButtons(button)
             window.location.href='https://1drv.ms/b/s!ArZmv0IiZ04JgYQG6qbtmXJr1kXrhg?e=A4D9RL';
         }
     });
-  });
+});
 
+tab.forEach((everyTab, i)=>
+{
+    tab[i].addEventListener('click',()=>
+    {
+        tab.forEach((everyTab , j) =>
+        {
+            tab[j].classList.remove('active');
+            projectBlock[j].classList.remove('active');
+        })
+
+        tab[i].classList.add('active');
+        projectBlock[i].classList.add('active');
+    })
+})
+
+
+accordionHeaders.forEach(header => 
+{
+    header.addEventListener('click', () => 
+    {
+        const accordionBlock = header.parentElement;
+        accordionBlock.classList.toggle('active');
+
+        if (accordionBlock.classList.contains('active')) 
+        {
+            accordionBlock.carousel.style.height = '100vh';
+        } 
+        else 
+        {
+            accordionBlock.carousel.style.height = null;
+        }
+    });
+});
+
+// 2.4 For each cycle that is going to receive all the options of the slider.
+option.forEach((everyOption,i) =>
+{
+    option[i].addEventListener('click',()=>
+    {
+        let position = i;
+        let operation = position * -50;
+
+        slider.style.transform = `translateX(${ operation }%)`;
+
+        option.forEach((everyOption,i) =>
+        {
+            option[i].classList.remove('active');
+        });
+
+        option[i].classList.add('active');
+    });
+});
 

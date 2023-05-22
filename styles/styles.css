@@ -80,7 +80,8 @@ table,input,textarea
 /*Standard sizes of every section of the web-page.*/
 .section-content
 {
-    max-width: 90vw;
+    padding: 2rem 0rem; 
+    max-width: 90%;
     height: auto;
     margin: auto;
 }
@@ -138,6 +139,8 @@ header
     align-items: center;
     padding: 1.5rem 1rem;
     z-index: 10;
+    border-radius: 0rem 0rem 1rem 1rem;
+    border-bottom: 0.1rem solid var(--contrast-color);
 }
 
 /* My Logo. */
@@ -377,7 +380,6 @@ header .nav-responsive img
 {
     background-color: var(--first-background-color);
     color: var(--main-text-color);
-    padding: 2rem 2rem;
 }
 
 /* About Title */
@@ -501,7 +503,6 @@ header .nav-responsive img
 {
     background-color: var(--second-background-color);
     color: var(--main-text-color);
-    padding: 2rem 2rem;
 }
 
 /* project title */
@@ -511,89 +512,258 @@ header .nav-responsive img
     margin: 2rem 0;
 }
 
-/* important parts of the paragraphs */
-.projects p span
+/* Tabs trial */
+
+.projects-container
 {
-    color: #A8B5BF;
+    width: 100%;
+    margin: auto;
+}
+
+.projects-container .tabs
+{
+    padding: 1rem 0;
+    margin: auto;
+    border-radius: 3rem;
+    width: 50%;
+    background-color: var(--first-background-color);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-container .tabs .tab-option
+{
+    padding: 1rem;
+    margin: 0 1rem 0 0;
+    cursor: pointer;
+    border-radius: 3rem;
+    transition: all 0.5s ease;
+}
+
+.projects-container .tabs .tab-option:hover
+{
+    background-color: var(--contrast-color);
+}
+
+.projects-container .tabs .tab-option.active
+{
+    background-color: var(--contrast-color);
+    color: var(--main-text-color);
     font-weight: bold;
 }
 
-/* container of the section of projects */
-.projects .section-content .project
+.projects-container .carousel-container
 {
-    display: flex;
-    flex-direction: row;
-    padding: 2rem 0rem;
-}
-
-/* division of the container in two columns */
-.projects .section-content .project .project-col
-{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-/* technologies used */
-.projects .section-content .project .project-col h4
-{
-    color: var(--contrast-color);
-}
-
-/* overlay container */
-.projects .section-content .project .img .overlay-block
-{
+    margin-top: 2rem;
+    width: 100%;
+    height: 85vh;
+    border-radius: 3rem;
     position: relative;
+    background-color: var(--first-background-color);
 }
 
-/* images of the projects */
-.projects .section-content .project .project-col img,
-.projects .section-content .project .project-col svg,
-.projects .section-content .project .project-col svg .spring-content
-{
-    fill: var(--main-text-color);
-    width: 40rem;
-    height: 25rem;
-    cursor: pointer;
-    border: 0.2rem solid var(--contrast-color);
-    border-radius: 5rem;
-}
-
-/* overlay icon container */
-.projects .section-content .project .img .overlay-block .overlay
+.projects-container .carousel-container .carousel
 {
     position: absolute;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+    border-radius: 3rem;
+    transition: all 1s ease;
+}
+
+.projects-container .carousel-container .carousel h1
+{
+    margin-top: 2rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.projects-container .carousel-container .carousel.active
+{
+    display: block;
+    animation: fade 2s ease;
+}
+
+@keyframes fade 
+{
+    from 
+    {
+        opacity: 0;
+    }
+    to 
+    {
+        opacity: 1;
+    }
+}
+
+/* Carousel trial */
+
+/* Note to change the height of this section you have to change the height with 70% to fit the options section with the slider section of the carrousel. */
+.carousel .slider
+{
+    margin: 2rem 0;
+    width: 200%;
+    height: 65%;
     display: flex;
-    gap: 2rem;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    transition: all 0.5s ease;
+    transform: translateX(0%);
+}
+
+
+/* Note it has to have the 100% of to not oversize the height of the container.*/
+.carousel .slider .overlay-block
+{
+    position: relative;
+    width: calc(95% / 2);
+    height: 100%;
+    margin: auto;
+}
+
+/* Note it has to have the 100% of to fit the complete height of the container.*/
+.carousel .slider .overlay-block .img-slider
+{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    border: 0.2rem solid var(--contrast-color);
+    cursor: pointer;
+}
+
+.carousel .slider .overlay-block .overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 2rem;
     width: 100%;
     height: 100%;
     border-radius: 5rem;
     border: 0.2rem solid var(--contrast-color);
     background: linear-gradient(rgba(24, 27, 29, 1),rgba(24, 27, 29, 1));
-    transition: 1s;
+    transition: all 1s ease;
     opacity: 0;
     cursor: pointer;
 }
 
-/* icon properties */
-.projects .section-content .project .img .overlay-block .overlay .ic-overlay
+/* overlay animation */
+.carousel .slider .overlay-block .overlay:hover
 {
+    opacity: 1;
+}
+
+.carousel .slider .overlay-block .overlay .ic-overlay,
+.spring-content
+{
+    fill:var(--main-text-color);
     height: 8rem;
     width: 8rem;
 }
 
-/* overlay animation */
-.projects .section-content .project .img .overlay-block .overlay:hover
+.carousel .options
 {
-    opacity: 1;
+    width: 30%;
+    border-radius: 5rem;
+    background-color: var(--second-background-color);
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
+
+.carousel .options .slide-option
+{
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+    border-radius: 5rem;
+    border: 0.2rem solid var(--contrast-color);
+    cursor: pointer;
+}
+
+.carousel .options .slide-option.active
+{
+    background-color: var(--contrast-color);
+}
+
+/* Acordion trial */
+
+/* .accordion-block
+{
+    border-bottom: 0.1rem solid var(--contrast-color);
+    background-color: var(--first-background-color);
+}
+
+.accordion-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    cursor: pointer;
+}
+
+.accordion-header:hover
+{
+    background-color: var(--contrast-color);
+}
+
+.accordion-header .h2
+{
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.accordion-header svg
+{
+    width: 7rem;
+    height: 7rem;
+} 
+
+.accordion-block .carousel
+{
+    background-color: var(--first-background-color);
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 1.8s ease; 
+}
+
+.accordion-block .accordion-header svg
+{
+    transition: all 1.8s ease;
+}
+
+.accordion-block.active .accordion-header svg
+{
+    transform: rotate(-90deg);
+}
+
+.accordion-block.active .carousel
+{
+    height: 100vh;
+} */
+
 
 /* 5.Skills */
 
@@ -602,7 +772,6 @@ header .nav-responsive img
 {
     background-color: var(--first-background-color);
     color: var(--main-text-color);
-    padding: 2rem 2rem;
 }
 
 /* Skills Tittle */
@@ -689,7 +858,6 @@ header .nav-responsive img
 {
     background-color: var(--second-background-color);
     color: var(--main-text-color);
-    padding: 2rem 2rem;
 }
 /* Education Title. */
 .education h2
@@ -884,7 +1052,6 @@ header .nav-responsive img
     background-size: cover;
     background-color: var(--first-background-color);
     color: var(--main-text-color);
-    padding: 5rem 0rem;
 }
 
 /* Tittle of the contact section */
