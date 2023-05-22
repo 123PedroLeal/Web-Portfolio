@@ -520,7 +520,7 @@ header .nav-responsive img
     margin: auto;
 }
 
-.projects-container .tabs
+.projects-container .project-tabs
 {
     padding: 1rem 0;
     margin: auto;
@@ -533,7 +533,7 @@ header .nav-responsive img
     align-items: center;
 }
 
-.projects-container .tabs .tab-option
+.projects-container .project-tabs .project-tab-option
 {
     padding: 1rem;
     margin: 0 1rem 0 0;
@@ -542,12 +542,12 @@ header .nav-responsive img
     transition: all 0.5s ease;
 }
 
-.projects-container .tabs .tab-option:hover
+.projects-container .project-tabs .project-tab-option:hover
 {
     background-color: var(--contrast-color);
 }
 
-.projects-container .tabs .tab-option.active
+.projects-container .project-tabs .project-tab-option.active
 {
     background-color: var(--contrast-color);
     color: var(--main-text-color);
@@ -558,7 +558,7 @@ header .nav-responsive img
 {
     margin-top: 2rem;
     width: 100%;
-    height: 85vh;
+    height: 90vh;
     border-radius: 3rem;
     position: relative;
     background-color: var(--first-background-color);
@@ -605,7 +605,7 @@ header .nav-responsive img
     }
 }
 
-/* Carousel trial */
+/* Carousel Section */
 
 /* Note to change the height of this section you have to change the height with 70% to fit the options section with the slider section of the carrousel. */
 .carousel .slider
@@ -706,21 +706,36 @@ header .nav-responsive img
     background-color: var(--contrast-color);
 }
 
-/* Acordion trial */
+/* 5.Skills */
 
-/* .accordion-block
+/* Skills container*/
+.skills
 {
-    border-bottom: 0.1rem solid var(--contrast-color);
     background-color: var(--first-background-color);
+    color: var(--main-text-color);
 }
+
+/* Skills Tittle */
+.skills h2
+{
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Acordion trial */
 
 .accordion-header
 {
     display: flex;
     align-items: center;
+    background-color: var(--second-background-color);
+    border-radius: 1rem;
     justify-content: space-between;
+    width: 100%;
     padding: 0 3rem;
     cursor: pointer;
+    border-bottom: 0.01rem solid var(--contrast-color);
 }
 
 .accordion-header:hover
@@ -740,15 +755,6 @@ header .nav-responsive img
     height: 7rem;
 } 
 
-.accordion-block .carousel
-{
-    background-color: var(--first-background-color);
-    padding: 0;
-    height: 0;
-    overflow: hidden;
-    transition: all 1.8s ease; 
-}
-
 .accordion-block .accordion-header svg
 {
     transition: all 1.8s ease;
@@ -759,96 +765,143 @@ header .nav-responsive img
     transform: rotate(-90deg);
 }
 
-.accordion-block.active .carousel
-{
-    height: 100vh;
-} */
-
-
-/* 5.Skills */
-
-/* Skills container*/
-.skills
+.accordion-block .skillsContainer
 {
     background-color: var(--first-background-color);
-    color: var(--main-text-color);
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 1.8s ease; 
 }
 
-/* Skills Tittle */
-.skills h2
+.accordion-block.active .skillsContainer
 {
-    text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    height: 60vh;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.skillsContainer .skill-tabs
+{
+    padding: 1rem 0;
+    margin-top: 2rem;
+    margin: auto;
+    border-radius: 3rem;
+    width: 50%;
+    background-color: var(--second-background-color);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillsContainer .skill-tabs .skill-tab-option
+{
+    padding: 1rem;
+    margin: 0 1rem 0 0;
+    cursor: pointer;
+    border-radius: 3rem;
+    transition: all 0.5s ease;
+}
+
+.skillsContainer .skill-tabs .skill-tab-option:hover
+{
+    background-color: var(--contrast-color);
+}
+
+.skillsContainer .skill-tabs .skill-tab-option.active
+{
+    background-color: var(--contrast-color);
+    color: var(--main-text-color);
+    font-weight: bold;
 }
 
 /* Container of skills columns */
-.skills .skill-row
+.skillsContainer .skill-rows-container
 {
-    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+    height: 40vh;
+    border-radius: 3rem;
+    position: relative;
+    background-color: var(--second-background-color)
 }
 
-/* Format of the three columns */
-.skills .skill-column
+/* Format of the three rows */
+.skillsContainer .skill-rows-container .skill-block
 {
-    width: 30vw;
-    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+    transition: all 1s ease;
+}
+
+.skillsContainer .skill-rows-container .skill-block.active
+{
+    display: block;
+    animation: fade 2s ease;
 }
 
 /* Title of each column */
-.skills .skill-row .skill-column h3
+.skillsContainer .skill-rows-container .skill-block h3
 {
-    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    margin: 2rem 0rem;
 }
 
 /* Container of the containers of icons */
-.skills .skill-row .skill-column .skill-container
+.skillsContainer .skill-rows-container .skill-block .skill-row
 {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    max-height: 100vh;
-    gap: 1rem; 
+    align-items: center; 
 }
 
 /* Container of the icon & name of the technology. */
-.skills .skill-row .skill-column .skill-container .skill
+.skillsContainer .skill-rows-container .skill-block .skill-row .skill
 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-
-    width: 14rem;
-    height: 14rem;
-    background-color: var(--second-background-color);
+    background-color: var(--first-background-color);
     border-radius: 2rem;
-    transition: 0.3s;
+    width: 16.5rem;
+    height: 14rem;
+    transition: all 1s ease;
 }
 
 /* Animation when the mouse is above the button. */
-.skills .skill-row .skill-column .skill-container .skill:hover
+.skillsContainer .skill-rows-container .skill-block .skill-row .skill:hover
 {
     background-color: var(--contrast-color);
 }
 
 /* Name of each icon. */
-.skills .skill-row .skill-column .skill-container .skill span
+.skillsContainer .skill-rows-container .skill-block .skill-row .skill span
 {
     font-size: 1.8rem;
     font-weight: bold;
+    text-align: center;
 }
 
 /* Instruccion for the icons */
-.skills .skill-row .skill-column .skill-container .skill svg,
-.skills .skill-row .skill-column .skill-container .skill svg .spring-content 
+.skillsContainer .skill-rows-container .skill-block .skill-row .skill svg,
+.skillsContainer .skill-rows-container .skill-block .skill-row .skill svg .spring-content 
 {
     fill: var(--main-text-color);
-    height: 8rem;
-    width: 8rem;
+    height: 6.5rem;
+    width: 6.5rem;
 }
 
 /* 6. Education */

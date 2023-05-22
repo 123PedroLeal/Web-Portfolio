@@ -12,13 +12,14 @@ const toggleCheck = document.querySelector(".check");
 // 1.4 Buttons for Titles & Certifications.
 const buttons = document.querySelectorAll("button");
 
-const tab = document.querySelectorAll(".tab-option");
+const projectTab = document.querySelectorAll(".project-tab-option");
 const projectBlock = document.querySelectorAll(".carousel");
 
-// 1.5 Accordion block of information.
-const accordionBlocks = document.querySelectorAll(".accordion-block");
 // 1.6 Accordion header to make the click on.
 const accordionHeaders = document.querySelectorAll(".accordion-header");
+const skillsContainer = document.querySelectorAll(".skillsContainer");
+const skillTab = document.querySelectorAll(".skill-tab-option");
+const skillBlock = document.querySelectorAll(".skill-block");
 
 // 1.8 Slider of projects.
 const slider = document.querySelector(".slider");
@@ -94,21 +95,35 @@ buttons.forEach(function allButtons(button)
     });
 });
 
-tab.forEach((everyTab, i)=>
+projectTab.forEach((everyTab, i)=>
 {
-    tab[i].addEventListener('click',()=>
+    projectTab[i].addEventListener('click',()=>
     {
-        tab.forEach((everyTab , j) =>
+        projectTab.forEach((everyTab , j) =>
         {
-            tab[j].classList.remove('active');
+            projectTab[j].classList.remove('active');
             projectBlock[j].classList.remove('active');
         })
 
-        tab[i].classList.add('active');
+        projectTab[i].classList.add('active');
         projectBlock[i].classList.add('active');
     })
 })
 
+skillTab.forEach((everyTab, i)=>
+{
+    skillTab[i].addEventListener('click',()=>
+    {
+        skillTab.forEach((everyTab , j) =>
+        {
+            skillTab[j].classList.remove('active');
+            skillBlock[j].classList.remove('active');
+        })
+
+        skillTab[i].classList.add('active');
+        skillBlock[i].classList.add('active');
+    })
+})
 
 accordionHeaders.forEach(header => 
 {
@@ -119,11 +134,11 @@ accordionHeaders.forEach(header =>
 
         if (accordionBlock.classList.contains('active')) 
         {
-            accordionBlock.carousel.style.height = '100vh';
+            skillsContainer.style.height = '60vh';
         } 
         else 
         {
-            accordionBlock.carousel.style.height = null;
+            skillsContainer.style.height = null;
         }
     });
 });
