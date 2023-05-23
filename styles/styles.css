@@ -588,7 +588,6 @@ header .nav-responsive img
     animation: fade 2s ease;
 }
 
-
 @keyframes fade 
 {
     from 
@@ -647,7 +646,6 @@ header .nav-responsive img
 {
     width: 400%;
     height: 100%;
-    margin-left: -100%;
 
     display: flex;
     transition: all 1.5s ease;
@@ -698,8 +696,6 @@ header .nav-responsive img
     opacity: 0;
     cursor: pointer;
 }
-
-
 
 /* overlay animation */
 .carousel .slider .overlay-block .overlay:hover

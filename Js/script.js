@@ -19,9 +19,13 @@ const projectSlider = document.querySelector(".slider");
 const projectArrowLeft = document.querySelector(".arrowButtonLeft");
 const projectArrowRight = document.querySelector(".arrowButtonRight"); 
 const projectSliderOption = document.querySelectorAll(".slide-option");
-let overlayContainer = document.querySelectorAll(".overlay-block.practice");
-const overlayLastContainer = overlayContainer[overlayContainer.length -1];
-projectSlider.insertAdjacentElement('afterbegin', overlayLastContainer);
+const overlayContainer = document.querySelectorAll(".overlay-block.practice");
+// Global Variables
+let currentPosition = 1;
+const numProjects = overlayContainer.length;
+// Configurar el slider para que sea infinito
+const firstSlideClone = projectSliderOption[0].cloneNode(true);
+const lastSlideClone = projectSliderOption[numProjects - 1].cloneNode(true);
 
 // 1.6 Skills section. 
 const skillAccordionHeaders = document.querySelectorAll(".accordion-header");
@@ -31,18 +35,26 @@ const skillBlock = document.querySelectorAll(".skill-block");
 
 // 2. Events & Functions.
 
-// 2.1 Global Functions.
-function moveSlideRight()
+// Función para actualizar la posición del slider y los iconos
+function updateSliderPosition() 
 {
-    let overlayFirstContainer = document.querySelectorAll(".overlay-block.practice")[0];
-    projectSlider.style.marginLeft = "-200%";
-    projectSlider.style.transition = "all 1.5s ease";
-    setTimeout(function replaceLast() 
+    const slideWidth = 100 / numProjects; // Ancho de cada slide en porcentaje
+    let operation = currentPosition * -slideWidth;
+    projectSlider.style.transform = `translateX(${operation}%)`;
+
+    projectSliderOption.forEach((option, index) => 
     {
-        projectSlider.style.transition = "none";
-        projectSlider.insertAdjacentElement('beforeend', overlayFirstContainer);
-        projectSlider.style.marginLeft = "-100%";
-    }, 1500);
+        option.classList.remove('active');
+    });
+
+    projectSliderOption[currentPosition].classList.add('active');
+}
+
+// Función para cambiar la imagen hacia la derecha
+function moveSlideRight() 
+{
+  currentPosition = (currentPosition + 1) % numProjects;
+  updateSliderPosition();
 }
 
 // 2.2 Local Functions and events.
@@ -129,42 +141,32 @@ projectTab.forEach((everyTab, i)=>
     })
 })
 
-projectArrowRight.addEventListener('click', moveSlideRight)
+// Asignar eventos a las flechas
+projectArrowRight.addEventListener('click', moveSlideRight);
 
-setInterval(moveSlideRight, 4000);
-
-projectArrowLeft.addEventListener('click', function moveSlideLeft()
+projectArrowLeft.addEventListener('click', function moveSlideLeft() 
 {
-    let overlayContainer = document.querySelectorAll(".overlay-block.practice");
-    const overlayLastContainer = overlayContainer[overlayContainer.length -1];
-    projectSlider.style.marginLeft = "0%";
-    projectSlider.style.transition = "all 1.5s ease";
-    setTimeout(function replaceFirst() 
-    {
-        projectSlider.style.transition = "none";
-        projectSlider.insertAdjacentElement('afterbegin', overlayLastContainer);
-        projectSlider.style.marginLeft = "-100%";
-    }, 1500);
-})
-
-// For each cycle that is going to receive all the options of the slider.
-projectSliderOption.forEach((everyOption,i) =>
-{
-    projectSliderOption[i].addEventListener('click',()=>
-    {
-        let position = i;
-        let operation = position * -25;
-
-        projectSlider.style.transform = `translateX(${ operation }%)`;
-
-        projectSliderOption.forEach((everyOption,i) =>
-        {
-            projectSliderOption[i].classList.remove('active');
-        });
-
-        projectSliderOption[i].classList.add('active');
-    });
+    // Función para cambiar la imagen hacia la izquierda
+    currentPosition = (currentPosition - 1 + numProjects) % numProjects;
+    updateSliderPosition();
 });
+
+// Asignar eventos a los botones de numeración
+projectSliderOption.forEach((option, index) => 
+{
+  option.addEventListener('click', () => 
+  {
+    currentPosition = index;
+    updateSliderPosition();
+  });
+});
+
+// Iniciar el intervalo de cambio automático
+setInterval(moveSlideRight, 5000);
+
+// Configuracion del Slider para que sea infinito.
+projectSlider.appendChild(firstSlideClone);
+projectSlider.insertBefore(lastSlideClone, projectSliderOption[0]);
 
 skillTab.forEach((everyTab, i)=>
 {
@@ -198,5 +200,7 @@ skillAccordionHeaders.forEach(header =>
         }
     });
 });
+
+
 
 
