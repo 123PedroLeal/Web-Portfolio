@@ -12,23 +12,42 @@ const toggleCheck = document.querySelector(".check");
 // 1.4 Buttons for Titles & Certifications.
 const buttons = document.querySelectorAll("button");
 
+// 1.5 Projects section.
 const projectTab = document.querySelectorAll(".project-tab-option");
 const projectBlock = document.querySelectorAll(".carousel");
+const projectSlider = document.querySelector(".slider");
+const projectArrowLeft = document.querySelector(".arrowButtonLeft");
+const projectArrowRight = document.querySelector(".arrowButtonRight"); 
+const projectSliderOption = document.querySelectorAll(".slide-option");
+let overlayContainer = document.querySelectorAll(".overlay-block.practice");
+const overlayLastContainer = overlayContainer[overlayContainer.length -1];
+projectSlider.insertAdjacentElement('afterbegin', overlayLastContainer);
 
-// 1.6 Accordion header to make the click on.
-const accordionHeaders = document.querySelectorAll(".accordion-header");
+// 1.6 Skills section. 
+const skillAccordionHeaders = document.querySelectorAll(".accordion-header");
 const skillsContainer = document.querySelectorAll(".skillsContainer");
 const skillTab = document.querySelectorAll(".skill-tab-option");
 const skillBlock = document.querySelectorAll(".skill-block");
 
-// 1.8 Slider of projects.
-const slider = document.querySelector(".slider");
-// 1.9 Options of the to select the project inside the slider.
-const option = document.querySelectorAll(".slide-option");
+// 2. Events & Functions.
 
-// 2.Functions & Events.
+// 2.1 Global Functions.
+function moveSlideRight()
+{
+    let overlayFirstContainer = document.querySelectorAll(".overlay-block.practice")[0];
+    projectSlider.style.marginLeft = "-200%";
+    projectSlider.style.transition = "all 1.5s ease";
+    setTimeout(function replaceLast() 
+    {
+        projectSlider.style.transition = "none";
+        projectSlider.insertAdjacentElement('beforeend', overlayFirstContainer);
+        projectSlider.style.marginLeft = "-100%";
+    }, 1500);
+}
 
-// 2.1 Event who has a function to display the menu on the right side of the screen in a vertical view style.
+// 2.2 Local Functions and events.
+
+// Event who has a function to display the menu on the right side of the screen in a vertical view style.
 navMenu.addEventListener('click', function showMenu()
 {
     // Variable that receives the condition that enables a to change the classlist to show the options in a vertical side view.  
@@ -48,7 +67,7 @@ navMenu.addEventListener('click', function showMenu()
     }
 });
 
-// 2.2 Event who has a Function to change the lenguage of the webpage from english to spanish and vice versa.
+// Event who has a Function to change the lenguage of the webpage from english to spanish and vice versa.
 toggleCheck.addEventListener('click', function lenguage()
 {
     // Variable that changes its value when the user click in them.
@@ -66,7 +85,7 @@ toggleCheck.addEventListener('click', function lenguage()
     }
 });
 
-// 2.3 For each to receive an event of all the buttons on the webpage. 
+// For each to receive an event of all the buttons on the webpage. 
 buttons.forEach(function allButtons(button) 
 {
     // Event that has a function that receives the event of the buttons when they are clicked.
@@ -110,6 +129,43 @@ projectTab.forEach((everyTab, i)=>
     })
 })
 
+projectArrowRight.addEventListener('click', moveSlideRight)
+
+setInterval(moveSlideRight, 4000);
+
+projectArrowLeft.addEventListener('click', function moveSlideLeft()
+{
+    let overlayContainer = document.querySelectorAll(".overlay-block.practice");
+    const overlayLastContainer = overlayContainer[overlayContainer.length -1];
+    projectSlider.style.marginLeft = "0%";
+    projectSlider.style.transition = "all 1.5s ease";
+    setTimeout(function replaceFirst() 
+    {
+        projectSlider.style.transition = "none";
+        projectSlider.insertAdjacentElement('afterbegin', overlayLastContainer);
+        projectSlider.style.marginLeft = "-100%";
+    }, 1500);
+})
+
+// For each cycle that is going to receive all the options of the slider.
+projectSliderOption.forEach((everyOption,i) =>
+{
+    projectSliderOption[i].addEventListener('click',()=>
+    {
+        let position = i;
+        let operation = position * -25;
+
+        projectSlider.style.transform = `translateX(${ operation }%)`;
+
+        projectSliderOption.forEach((everyOption,i) =>
+        {
+            projectSliderOption[i].classList.remove('active');
+        });
+
+        projectSliderOption[i].classList.add('active');
+    });
+});
+
 skillTab.forEach((everyTab, i)=>
 {
     skillTab[i].addEventListener('click',()=>
@@ -125,14 +181,14 @@ skillTab.forEach((everyTab, i)=>
     })
 })
 
-accordionHeaders.forEach(header => 
+skillAccordionHeaders.forEach(header => 
 {
     header.addEventListener('click', () => 
     {
-        const accordionBlock = header.parentElement;
-        accordionBlock.classList.toggle('active');
+        const skillAccordionBlock = header.parentElement;
+        skillAccordionBlock.classList.toggle('active');
 
-        if (accordionBlock.classList.contains('active')) 
+        if (skillAccordionBlock.classList.contains('active')) 
         {
             skillsContainer.style.height = '60vh';
         } 
@@ -143,22 +199,4 @@ accordionHeaders.forEach(header =>
     });
 });
 
-// 2.4 For each cycle that is going to receive all the options of the slider.
-option.forEach((everyOption,i) =>
-{
-    option[i].addEventListener('click',()=>
-    {
-        let position = i;
-        let operation = position * -50;
-
-        slider.style.transform = `translateX(${ operation }%)`;
-
-        option.forEach((everyOption,i) =>
-        {
-            option[i].classList.remove('active');
-        });
-
-        option[i].classList.add('active');
-    });
-});
 
