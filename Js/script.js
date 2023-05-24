@@ -126,6 +126,39 @@ buttons.forEach(function allButtons(button)
     });
 });
 
+skillTab.forEach((everyTab, i)=>
+{
+    skillTab[i].addEventListener('click',()=>
+    {
+        skillTab.forEach((everyTab , j) =>
+        {
+            skillTab[j].classList.remove('active');
+            skillBlock[j].classList.remove('active');
+        })
+
+        skillTab[i].classList.add('active');
+        skillBlock[i].classList.add('active');
+    })
+})
+
+skillAccordionHeaders.forEach(header => 
+{
+    header.addEventListener('click', () => 
+    {
+        const skillAccordionBlock = header.parentElement;
+        skillAccordionBlock.classList.toggle('active');
+
+        if (skillAccordionBlock.classList.contains('active')) 
+        {
+            skillsContainer.style.height = '60vh';
+        } 
+        else 
+        {
+            skillsContainer.style.height = null;
+        }
+    });
+});
+
 projectTab.forEach((everyTab, i)=>
 {
     projectTab[i].addEventListener('click',()=>
@@ -167,40 +200,5 @@ setInterval(moveSlideRight, 5000);
 // Configuracion del Slider para que sea infinito.
 projectSlider.appendChild(firstSlideClone);
 projectSlider.insertBefore(lastSlideClone, projectSliderOption[0]);
-
-skillTab.forEach((everyTab, i)=>
-{
-    skillTab[i].addEventListener('click',()=>
-    {
-        skillTab.forEach((everyTab , j) =>
-        {
-            skillTab[j].classList.remove('active');
-            skillBlock[j].classList.remove('active');
-        })
-
-        skillTab[i].classList.add('active');
-        skillBlock[i].classList.add('active');
-    })
-})
-
-skillAccordionHeaders.forEach(header => 
-{
-    header.addEventListener('click', () => 
-    {
-        const skillAccordionBlock = header.parentElement;
-        skillAccordionBlock.classList.toggle('active');
-
-        if (skillAccordionBlock.classList.contains('active')) 
-        {
-            skillsContainer.style.height = '60vh';
-        } 
-        else 
-        {
-            skillsContainer.style.height = null;
-        }
-    });
-});
-
-
 
 
