@@ -13,49 +13,14 @@ const toggleCheck = document.querySelector(".check");
 const buttons = document.querySelectorAll("button");
 
 // 1.5 Projects section.
-const projectTab = document.querySelectorAll(".project-tab-option");
-const projectBlock = document.querySelectorAll(".carousel");
-const projectSlider = document.querySelector(".slider");
-const projectArrowLeft = document.querySelector(".arrowButtonLeft");
-const projectArrowRight = document.querySelector(".arrowButtonRight"); 
-const projectSliderOption = document.querySelectorAll(".slide-option");
-const overlayContainer = document.querySelectorAll(".overlay-block.practice");
-// Global Variables
-let currentPosition = 1;
-const numProjects = overlayContainer.length;
-// Configurar el slider para que sea infinito
-const firstSlideClone = projectSliderOption[0].cloneNode(true);
-const lastSlideClone = projectSliderOption[numProjects - 1].cloneNode(true);
+const projectTabs = document.querySelectorAll(".project-tab-option");
+const projectCarousels = document.querySelectorAll(".carousel");
 
 // 1.6 Skills section. 
 const skillAccordionHeaders = document.querySelectorAll(".accordion-header");
 const skillsContainer = document.querySelectorAll(".skillsContainer");
 const skillTab = document.querySelectorAll(".skill-tab-option");
 const skillBlock = document.querySelectorAll(".skill-block");
-
-// 2. Events & Functions.
-
-// Función para actualizar la posición del slider y los iconos
-function updateSliderPosition() 
-{
-    const slideWidth = 100 / numProjects; // Ancho de cada slide en porcentaje
-    let operation = currentPosition * -slideWidth;
-    projectSlider.style.transform = `translateX(${operation}%)`;
-
-    projectSliderOption.forEach((option, index) => 
-    {
-        option.classList.remove('active');
-    });
-
-    projectSliderOption[currentPosition].classList.add('active');
-}
-
-// Función para cambiar la imagen hacia la derecha
-function moveSlideRight() 
-{
-  currentPosition = (currentPosition + 1) % numProjects;
-  updateSliderPosition();
-}
 
 // 2.2 Local Functions and events.
 
@@ -126,6 +91,106 @@ buttons.forEach(function allButtons(button)
     });
 });
 
+// Asignar eventos a las pestañas del proyecto
+projectTabs.forEach((tab, index) => 
+{
+  tab.addEventListener("click", () => 
+  {
+    updateActiveCarousel(index);
+  });
+});
+
+// Función para actualizar el carrusel activo
+function updateActiveCarousel(index) 
+{
+  // Remover clase 'active' de todas las pestañas y carruseles
+  projectTabs.forEach((tab) => tab.classList.remove("active"));
+  projectCarousels.forEach((carousel) => carousel.classList.remove("active")); 
+
+  // Agregar clase 'active' al carrusel seleccionado
+  projectTabs[index].classList.add("active");
+  projectCarousels[index].classList.add("active");
+
+  // Obtener elementos del carrusel activo
+  const activeCarousel = document.querySelector(".carousel.active");
+  const slider = activeCarousel.querySelector(".slider");
+  const sliderOptions = activeCarousel.querySelectorAll(".slide-option");
+  const arrowLeft = activeCarousel.querySelector(".arrowButtonLeft");
+  const arrowRight = activeCarousel.querySelector(".arrowButtonRight");
+
+  // Configurar variables y estado inicial
+  const slideWidth = 100 / sliderOptions.length;
+  let currentPosition = 0;
+
+  // Función para actualizar la posición del carrusel
+  function updateSliderPosition() 
+  {
+    const operation = currentPosition * -slideWidth;
+    slider.style.transform = `translateX(${operation}%)`;
+
+    sliderOptions.forEach((option) => option.classList.remove("active"));
+    sliderOptions[currentPosition].classList.add("active");
+  }
+
+  // Función para cambiar al siguiente slide
+  function moveNextSlide() 
+  {
+    currentPosition = (currentPosition + 1) % sliderOptions.length;
+    updateSliderPosition();
+  }
+
+  // Función para cambiar al slide anterior
+  function movePrevSlide() 
+  {
+    currentPosition = (currentPosition - 1 + sliderOptions.length) % sliderOptions.length;
+    updateSliderPosition();
+  }
+
+  // Asignar eventos a las flechas del carrusel
+  arrowRight.addEventListener("click", moveNextSlide);
+  arrowLeft.addEventListener("click", movePrevSlide);
+
+  // Iniciar el intervalo de cambio automático
+  let intervalId;
+
+  function startAutoSlide() 
+  {
+    intervalId = setInterval(moveNextSlide, 5000);
+  }
+
+  function stopAutoSlide() 
+  {
+    clearInterval(intervalId);
+  }
+
+  startAutoSlide();
+
+  // Detener el intervalo de cambio automático al pasar el mouse sobre el carrusel
+  activeCarousel.addEventListener("mouseenter", stopAutoSlide);
+
+  // Reanudar el intervalo de cambio automático al quitar el mouse del carrusel
+  activeCarousel.addEventListener("mouseleave", startAutoSlide);
+
+  // Obtener la posición de la opción activa
+  const activeOptionIndex = Array.from(sliderOptions).findIndex((option) => option.classList.contains("active"));
+
+  // Establecer la posición inicial del carrusel en la opción activa
+  currentPosition = activeOptionIndex >= 0 ? activeOptionIndex : 0;
+
+  // Asignar eventos a las opciones del carrusel
+  sliderOptions.forEach((option, optionIndex) => 
+  {
+    option.addEventListener("click", () => 
+    {
+      currentPosition = optionIndex;
+      updateSliderPosition();
+    });
+  });
+}
+
+updateActiveCarousel(0);
+
+
 skillTab.forEach((everyTab, i)=>
 {
     skillTab[i].addEventListener('click',()=>
@@ -158,47 +223,4 @@ skillAccordionHeaders.forEach(header =>
         }
     });
 });
-
-projectTab.forEach((everyTab, i)=>
-{
-    projectTab[i].addEventListener('click',()=>
-    {
-        projectTab.forEach((everyTab , j) =>
-        {
-            projectTab[j].classList.remove('active');
-            projectBlock[j].classList.remove('active');
-        })
-
-        projectTab[i].classList.add('active');
-        projectBlock[i].classList.add('active');
-    })
-})
-
-// Asignar eventos a las flechas
-projectArrowRight.addEventListener('click', moveSlideRight);
-
-projectArrowLeft.addEventListener('click', function moveSlideLeft() 
-{
-    // Función para cambiar la imagen hacia la izquierda
-    currentPosition = (currentPosition - 1 + numProjects) % numProjects;
-    updateSliderPosition();
-});
-
-// Asignar eventos a los botones de numeración
-projectSliderOption.forEach((option, index) => 
-{
-  option.addEventListener('click', () => 
-  {
-    currentPosition = index;
-    updateSliderPosition();
-  });
-});
-
-// Iniciar el intervalo de cambio automático
-setInterval(moveSlideRight, 5000);
-
-// Configuracion del Slider para que sea infinito.
-projectSlider.appendChild(firstSlideClone);
-projectSlider.insertBefore(lastSlideClone, projectSliderOption[0]);
-
 
