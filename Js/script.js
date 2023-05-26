@@ -22,7 +22,10 @@ const skillsContainer = document.querySelectorAll(".skillsContainer");
 const skillTab = document.querySelectorAll(".skill-tab-option");
 const skillBlock = document.querySelectorAll(".skill-block");
 
-// 2.2 Local Functions and events.
+// 1.7 Education section.
+const buttonEducation = document.querySelectorAll('.button-education');
+const titleEducation = document.querySelectorAll('.title-education');
+const itemEducation = document.querySelectorAll('.item');
 
 // Event who has a function to display the menu on the right side of the screen in a vertical view style.
 navMenu.addEventListener('click', function showMenu()
@@ -223,4 +226,34 @@ skillAccordionHeaders.forEach(header =>
         }
     });
 });
+
+$(document).ready(function() {
+  $('.button-education').click(function() {
+    $('.button-education').removeClass('active');
+    $(this).addClass('active');
+
+    $('.item.lft, .item.rgt').removeClass('active');
+    $('.title-education').removeClass('active');
+    
+    if ($(this).hasClass('degrees')) {
+      $('.column.left .item.lft:nth-child(1), .column.left .item.lft:nth-child(2), .column.right .item.rgt:nth-child(1), .column.right .item.rgt:nth-child(2)').addClass('active');
+      $('.title-education.degrees').addClass('active');
+    } else if ($(this).hasClass('certifications')) {
+      $('.column.left .item.lft:nth-child(3), .column.left .item.lft:nth-child(4), .column.right .item.rgt:nth-child(3), .column.right .item.rgt:nth-child(4)').addClass('active');
+      $('.title-education.certifications').addClass('active');
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 

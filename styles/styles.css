@@ -92,27 +92,29 @@ button
     cursor: pointer;
     background-color: transparent;
     border: 0.2rem solid var(--main-text-color);
-    width: fit-content;
+    width: 20rem;
     display: block;
     margin: 2rem auto;
     padding: 1rem 2.2rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: var(--main-text-color);
     position: relative;
     z-index: 1;
+    border-radius: 5rem;
 }
 
 /* Style of the animation on every button on the webpage. */
 button .overlay
 {
+    border-radius: 5rem;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 0%;
     height: 100%;
     background-color: var(--contrast-color);
     z-index: -1;
-    transition: 1s;
+    transition: all 1.5s ease;
 }
 
 /* Instruction that display the animation when the user put the mouse on the button. */
@@ -124,7 +126,7 @@ button:hover .overlay
 /* Instruction to block one button to be displayed */
 .block-button
 {
-    display: none;
+    visibility: hidden;
 }
 
 /* 1.Header */
@@ -280,6 +282,7 @@ header .nav-responsive img
     align-items: center;
     padding: 2rem;
     background-color: var(--first-background-color);
+    border: 0.1rem solid var(--contrast-color);;
     border-radius: 4rem;
     max-width: 80%;
     width: 90rem;
@@ -952,45 +955,104 @@ header .nav-responsive img
     padding: 2rem 0;
 }
 
+.education h3
+{
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 3rem;
+}
+
+.education .options-education
+{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 2rem;
+}
+
+.education .options-education .button-education
+{
+    cursor: pointer;
+    background-color: transparent;
+    border: 0.2rem solid var(--main-text-color);
+    width: 20rem;
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: var(--main-text-color);
+    z-index: 1;
+    border-radius: 5rem;
+    transition: all 1.5 ease;
+}
+
+.education .options-education .button-education:hover
+{
+    background-color: var(--contrast-color);
+    font-weight: bold;
+}
+
+.education .options-education .button-education.active
+{
+    background-color: var(--contrast-color);
+    font-weight: bold;
+}
+
+.education .options-education .title-education
+{
+    display: none;
+}
+
+.education .options-education .title-education.active
+{
+    display: block;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
 /* Container of the 2 columns of education. */
-.education .row
+.education .columns-container
 {
     display: flex;
     justify-content: space-between;
 }
 
 /* Design of the columns of the section. */
-.education .row .column
+.education .columns-container .column
 {
     width: 49%;
     padding: 0 2rem;
 }
 
 /* Title of the column. */
-.education .row .column h3
+.education .columns-container .column h3
 {
     text-align: center;
     margin-bottom: 1rem;
 }
 
 /* Column of the left "Degrees". */
-.education .row .left
+.education .columns-container .left
 {
     border-right: 0.2rem solid var(--first-background-color);
 }
 
 /* Column of the right "Certifications". */
-.education .row .right
+.education .columns-container .right
 {
     border-left: 0.2rem solid var(--first-background-color);
 }
 
 /* Containers of the education blocks. */
-.education .row .item
+.education .columns-container .item
+{
+    display: none;
+}
+
+.education .columns-container .item.active
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     padding: 2.5rem;
     min-height: 45rem;
     margin-bottom: 3rem;
@@ -998,89 +1060,101 @@ header .nav-responsive img
     position: relative;
 }
 
-/* Container of the title and icons. */
-.education .row .item .content
+.education .columns-container .item .type-degree
 {
-    display: flex;
-    justify-content: space-between;
+    font-size: 2.5rem;
+    text-align: center;
     margin-bottom: 1rem;
 }
 
+.education .columns-container .item .text-item
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Container of the title and icons. */
+.education .columns-container .item .content
+{
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Container of only the titles. */
-.education .row .item .content .content-headers
+.education .columns-container .item .content .content-headers
 {
     display: flex;
     flex-direction: column;
 }
 
 /* Container of only the icons. */
-.education .row .item .content .content-ic
+.education .columns-container .item .content .content-ic
 {
     display: flex;
     gap: 1rem;
 }
 
 /* Icons of technologies used. */
-.education .row .item .content svg ,
-.education .row .item .content svg .spring-content
+.education .columns-container .item .content svg ,
+.education .columns-container .item .content svg .spring-content
 {
     fill: var(--main-text-color);
-    height: 5rem;
-    width: 5rem;
+    height: 4.5rem;
+    width: 4.5rem;
 }
 
 /* Name of the title */
-.education .row .item h4
+.education .columns-container .item h4
 {
     font-size: 2.2rem;
-    margin-bottom: 1rem;
 }
 
 /* Name of the Institution */
-.education .row .item .institution
+.education .columns-container .item .institution
 {
     color: var(--contrast-color);
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 /* Dates of begining and ending */
-.education .row .item .date
+.education .columns-container .item .date
 {
     color: var(--contrast-color);
     font-size: 1.6rem;
-    margin-bottom: 1rem;
 }
 
 /* Important parts of the text. */
-.education .row .item span
+.education .columns-container .item span
 {
     color: var(--contrast-color);
     font-weight: bold;
 }
 
 /* Paragraphs */
-.education .row .item p
+.education .columns-container .item p
 {
-    line-height: 2.4rem;
+    line-height: 2.5rem;
 }
 
 /* Border and spacing left */
-.education .row .lft
+.education .columns-container .lft
 {
     border-right: 0.2rem solid var(--contrast-color);
     margin-right: 2rem;
 }
 
 /* Border and spacing right */
-.education .row .rgt
+.education .columns-container .rgt
 {
     border-left: 0.2rem solid var(--contrast-color);
     margin-left: 2rem;
 }
 
 /* Line who joins the circle and the left border */
-.education .row .item .conectorl
+.education .columns-container .item .conectorl
 {
     height: 0.2rem;
     background-color: var(--contrast-color);
@@ -1092,7 +1166,7 @@ header .nav-responsive img
 }
 
 /* Cirle of the left block */
-.education .row .item .conectorl .circlel
+.education .columns-container .item .conectorl .circlel
 {
     display: block;
     height: 1rem;
@@ -1105,7 +1179,7 @@ header .nav-responsive img
 }
 
 /* Line who joins the circle and the right border */
-.education .row .item .conectorr
+.education .columns-container .item .conectorr
 {
     height: 0.2rem;
     background-color: var(--contrast-color);
@@ -1117,7 +1191,7 @@ header .nav-responsive img
 }
 
 /* Cirle of the right block */
-.education .row .item .conectorr .circler
+.education .columns-container .item .conectorr .circler
 {
     display: block;
     height: 1rem;
