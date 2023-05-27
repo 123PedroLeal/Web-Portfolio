@@ -246,18 +246,17 @@ header nav ul a:hover
 header .nav-responsive
 {
     background-color: var(--contrast-color);
-    color: var(--main-text-color);
-    padding: 0.8rem 1rem;
+    fill: var(--main-text-color);
     border-radius: 0.5rem;
     cursor: pointer;
     display: none;
 }
 
 /* Icon of options */
-header .nav-responsive img
+header .nav-responsive svg , header .nav-responsive path 
 {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 4rem;
+    width: 5rem;
 }
 
 /* 2. Home */
@@ -283,10 +282,8 @@ header .nav-responsive img
     padding: 2rem;
     background-color: var(--first-background-color);
     border: 0.1rem solid var(--contrast-color);;
-    border-radius: 4rem;
-    max-width: 80%;
-    width: 90rem;
-    height: 50%;
+    border-radius: 5rem;
+    width: 75vw;
     margin: auto;
     text-align: center;
 }
@@ -298,7 +295,7 @@ header .nav-responsive img
     height: auto;
     width: 25rem;
     border-radius: 100%;
-    border: 0.4rem solid var(--contrast-color);
+    border: 0.5rem solid var(--contrast-color);
 }
 
 
@@ -307,13 +304,12 @@ header .nav-responsive img
 {
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.5rem;
 }
 
 /* Name */
 .home .name-position h1
 {
-    padding-bottom: 0.3rem;
     border-bottom: 0.35rem solid var(--contrast-color);
 }
 
@@ -349,21 +345,20 @@ header .nav-responsive img
 /* Links Container */
 .home .banner .social-media a 
 {
-    width: 6rem;
-    height: 6rem;
+    width: 6.5rem;
+    height: 6.5rem;
     display: flex;
     justify-content: center;
     align-content: center;
     color: var(--main-text-color);
-    text-decoration: none;
-    border: 0.12rem solid var(--main-text-color);
+    border: 0.10rem solid var(--main-text-color);
     border-radius: 100%;
 }
 
 /* Social-media Icons */
 .home .banner .social-media a svg
 {
-    width: 4rem;
+    width: 4.5rem;
     height: auto;
     fill: var(--main-text-color);
 }
@@ -371,9 +366,9 @@ header .nav-responsive img
 /* Animation of the buttons in the webpage */
 .home .banner .social-media a:hover
 {
-    transition: 0.5s;
+    transition: all 0.5s ease;
     background-color: var(--contrast-color);
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 /*3.About */
@@ -899,7 +894,8 @@ header .nav-responsive img
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    align-items: center; 
+    align-items: center;
+    gap: 1rem; 
 }
 
 /* Container of the icon & name of the technology. */
@@ -912,7 +908,7 @@ header .nav-responsive img
     gap: 0.5rem;
     background-color: var(--first-background-color);
     border-radius: 2rem;
-    width: 16.5rem;
+    width: 14rem;
     height: 14rem;
     transition: all 1s ease;
 }
@@ -1266,7 +1262,13 @@ footer
     padding: 5rem 0rem 3rem 0rem;
     text-align: center;
     position: relative;
-    width: 100%;
+    border-top: 0.1rem solid var(--contrast-color);
+}
+
+footer p
+{
+    width: 90%;
+    margin: auto;
 }
 
 /* Text of the footer */
@@ -1292,8 +1294,8 @@ footer .social-media a
     align-content: center;
     color: var(--main-text-color);
     text-decoration: none;
-    width: 7rem;
-    height: 7rem;
+    width: 5.5rem;
+    height: 5.5rem;
     border: 0.12rem solid var(--main-text-color);
     border-radius: 100%;
 }
@@ -1301,7 +1303,7 @@ footer .social-media a
 /* Properties of the Icons */
 footer .social-media a svg
 {
-    width: 5rem;
+    width: 3.5rem;
     height: auto;
     fill: var(--main-text-color);
 }
@@ -1334,8 +1336,6 @@ footer .back
 @media (max-width:980px)
 {
     /* Header */
-
-    /* Horizontal Options. */
     nav
     {
         display: none;
@@ -1350,10 +1350,10 @@ footer .back
     /* Instructions to display from JavaScript the vertical options */
     nav.responsive
     {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
-        right: 2.5rem;
+        right: 12rem;
         top: 7.5rem;
         background-color: var(--second-background-color);
         width: 18rem;
@@ -1373,14 +1373,12 @@ footer .back
         text-align: center;
     }
 
+    /* Home */
     .home .banner
     {
-        margin-top: 10rem;
-        flex-direction: column;
-        height: 80%;
-        max-width: 80%;
-        width: 45%;
-        justify-content: space-between;
+        flex-direction: row;
+        width: 80vw;
+        justify-content: space-evenly;
     }
 
     .home .banner .img-profile
@@ -1390,99 +1388,90 @@ footer .back
 
     .home .banner .name-position h1
     {
-        font-size: 5rem;
+        font-size: 5.5rem;
     }
 
     .home .banner .name-position h2
     {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     .home .name-position .Front-End-Icons svg
     {
-        width: 4.2rem;
-    }
-
-    .home .banner .social-media
-    {
-        flex-direction: row;
+        width: 5rem;
     }
 
     .home .banner .social-media a 
     {
-        width: 5rem;
-        height: 5rem;
+        width: 5.5rem;
+        height: 5.5rem;
     }
 
     .home .banner .social-media a svg
     {
-        width: 3rem;
+        width: 4rem;
+    }
+
+    .projects .projects-container .project-tabs
+    {
+        width: 70%;
     }
 
     /* Education */
-    .education .row .item .content
+    .education .columns-container
     {
         flex-direction: column;
+    }
+
+    .education .columns-container .column
+    {
+        width: 100%;
+        padding: 0;
+    }
+
+    .education .columns-container .column .item
+    {
+        border-radius: 3rem;
+        border: 0.1rem solid var(--contrast-color);
+    }
+
+    .education .columns-container .column .item .type-degree
+    {
+        margin-bottom: 0rem;
+    }
+    
+    .education .columns-container .left
+    {
+        border-right: none;
+    }
+
+    .education .columns-container .right
+    {
+        border-left: none;
+    }
+
+    .education .columns-container .lft
+    {
+        border-right: none;
+        margin-right: 0;
+    }
+
+    .education .columns-container .rgt
+    {
+        border-left: none;
+        margin-left: 0;
+    }
+
+    .education .columns-container .lft .conectorl
+    {
+        display: none;
+    }
+
+    .education .columns-container .rgt .conectorr
+    {
+        display: none;
     }
 } 
-
-@media (max-width:900px)
-{
-    /* Projects */
-    .projects .section-content .project
-    {
-        flex-direction: column;
-        gap: 2rem;
-        margin-bottom: 4rem;
-    }
-
-    .projects .section-content .project .project-col
-    {
-        width: 100%;
-    }
-
-    .projects .section-content .project .project-col img
-    {
-        width: 100%
-    }
-
-    .projects .section-content .project .img .overlay-block .overlay
-    {
-        width: 100%;
-    }
-
-    /* Skills */
-    .skills
-    {
-        max-height: fit-content;
-    }
-
-    .skills .skill-row
-    {
-        flex-direction: column;
-    }
-
-    .skills .skill-row .skill-column 
-    {
-        text-align: center;
-        border-right: none;
-        width: 100%;
-        margin-bottom: 4rem;
-    }
-
-    .skills .skill-row .skill-column h3
-    {
-        margin: 2rem 0rem
-    }
-
-    /* Education */
-
-    .education .row .item .content .content-ic
-    {
-        justify-content: center;
-    }
-
-}
 
 @media (max-width:800px)
 {
@@ -1526,53 +1515,17 @@ footer .back
         text-align: center;
     }
 
-    /* Education */
+    /* Skills */
 
-    .education .row
+    .skillsContainer .skill-tabs
     {
-        display: block;
+        width: 70%;
     }
 
-    .education .row .item
+    .skillsContainer .skill-rows-container .skill-block .skill-row .skill
     {
-        text-align: center;
-    }
-
-    .education .row .column
-    {
-        width: 100%;
-    }
-
-    .education .row .left
-    {
-        border-right: none;
-    }
-
-    .education .row .right
-    {
-        border-left: none;
-    }
-
-    .education .row .lft
-    {
-        border-right: none;
-        margin-right: 0;
-    }
-
-    .education .row .rgt
-    {
-        border-left: none;
-        margin-left: 0;
-    }
-
-    .education .row .lft .conectorl
-    {
-        display: none;
-    }
-
-    .education .row .rgt .conectorr
-    {
-        display: none;
+        width: 12rem;
+        height: 12rem;
     }
 
     /* Projects */
@@ -1603,13 +1556,91 @@ footer .back
     }
 }
 
-@media (max-width:720px)
+@media (max-width:770px)
 {
     .home .banner
+    {
+        width: 90%;
+    }
+}
+
+@media (max-width:730px)
+{
+    .accordion-block.active .skillsContainer
+    {
+        height: 80vh;
+    }
+
+    .skillsContainer .skill-rows-container
+    {
+        height: 60vh;
+    }
+}
+
+@media (max-width:700px)
+{
+    .home .banner
+    {
+        margin-top: 10rem;
+        flex-direction: column;
+        width: 60%;
+        gap: 2rem;
+    }
+
+    .home .name-position .Front-End-Icons
+    {
+        display: none;
+    }
+
+    .home .banner .social-media
+    {
+        flex-direction: row;
+    }
+
+    .projects .projects-container .project-tabs
+    {
+        width: 100%;
+    }
+
+    .carousel .options
     {
         width: 60%;
     }
 
+    .education .options-education
+    {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .education .options-education .button-education
+    {
+        width: 70%;
+    }
+
+    .education .options-education .title-education.active 
+    {
+        display: none;
+    }
+   
+}
+
+@media (max-width:620px)
+{
+    .home .banner .name-position h1
+    {
+        font-size: 5rem;
+    }
+
+    .home .banner .name-position h2
+    {
+        font-size: 3rem;
+    }
+
+    .skillsContainer .skill-tabs 
+    {
+        width: 100%;
+    }
 }
 
 @media (max-width:550px)
@@ -1638,28 +1669,77 @@ footer .back
 
 }
 
-@media (max-width:450px)
+@media (max-width:500px)
+{
+    .projects .projects-container .project-tabs
+    {
+        flex-direction: column;
+        width: 80%;
+        gap: 1rem;
+    }
+
+    .projects-container .project-tabs .project-tab-option
+    {
+        border-radius: 0.5rem;
+        width: 80%;
+        margin: 0;
+        border: solid 0.1rem var(--contrast-color);
+    }
+}
+
+@media (max-width:470px)
 {
     .home .banner
     {
-        width: 95%;
-    }
-
-    .home .banner .name-position h1
-    {
-        font-size: 4.2rem;
-    }
-
-    .home .banner .name-position h2
-    {
-        font-size: 2.2rem;
+        width: 85%;
     }
 }
 
-@media (max-width:360px)
+@media (max-width:440px)
 {
-    
+    .skillsContainer .skill-tabs
+    {
+        flex-direction: column;
+        width: 80%;
+        gap: 1rem;
+    }
+
+    .skillsContainer .skill-tabs .skill-tab-option
+    {
+        border-radius: 0.5rem;
+        width: 80%;
+        margin: 0;
+        border: solid 0.1rem var(--contrast-color);
+        text-align: center;        
+    }
+
+    .accordion-block.active .skillsContainer
+    {
+        height: 120vh;
+    }
+
+    .skillsContainer .skill-rows-container
+    {
+        height: 70%;
+    }
+
+    .skillsContainer .skill-rows-container .skill-block
+    {
+        margin-top: 1rem;
+    }
+
+    .accordion-header .h2 
+    {
+        font-size: 3rem;
+    }
+
+    .accordion-header svg 
+    {
+        width: 5rem;
+        height: 5rem;
+    }
 }
+
 
 
 

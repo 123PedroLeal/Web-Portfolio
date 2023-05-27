@@ -23,9 +23,10 @@ const skillTab = document.querySelectorAll(".skill-tab-option");
 const skillBlock = document.querySelectorAll(".skill-block");
 
 // 1.7 Education section.
-const buttonEducation = document.querySelectorAll('.button-education');
-const titleEducation = document.querySelectorAll('.title-education');
-const itemEducation = document.querySelectorAll('.item');
+const buttonsEducation = document.querySelectorAll('.button-education');
+const titlesEducation = document.querySelectorAll('.title-education');
+const degreeItems = document.querySelectorAll('.item:nth-child(-n+2)');
+const certificationItems = document.querySelectorAll('.item:nth-child(n+3)');
 
 // Event who has a function to display the menu on the right side of the screen in a vertical view style.
 navMenu.addEventListener('click', function showMenu()
@@ -227,33 +228,61 @@ skillAccordionHeaders.forEach(header =>
     });
 });
 
-$(document).ready(function() {
-  $('.button-education').click(function() {
-    $('.button-education').removeClass('active');
-    $(this).addClass('active');
 
-    $('.item.lft, .item.rgt').removeClass('active');
-    $('.title-education').removeClass('active');
-    
-    if ($(this).hasClass('degrees')) {
-      $('.column.left .item.lft:nth-child(1), .column.left .item.lft:nth-child(2), .column.right .item.rgt:nth-child(1), .column.right .item.rgt:nth-child(2)').addClass('active');
-      $('.title-education.degrees').addClass('active');
-    } else if ($(this).hasClass('certifications')) {
-      $('.column.left .item.lft:nth-child(3), .column.left .item.lft:nth-child(4), .column.right .item.rgt:nth-child(3), .column.right .item.rgt:nth-child(4)').addClass('active');
-      $('.title-education.certifications').addClass('active');
+buttonsEducation.forEach( function clickEducationButtons(button) 
+{
+  button.addEventListener('click', function changeEducationDisplay() 
+  {
+    buttonsEducation.forEach((everyButton,i) => 
+    {
+      if (button.classList.contains('degrees')) 
+      {
+        buttonsEducation[1].classList.remove('active');
+        buttonsEducation[0].classList.add('active');
+      }
+      else if (button.classList.contains('certifications'))
+      {
+        buttonsEducation[0].classList.remove('active');
+        buttonsEducation[1].classList.add('active');
+      }
+    });
+
+    titlesEducation.forEach((everyTitle,i) => 
+    {
+      if (button.classList.contains('degrees')) 
+      {
+        titlesEducation[1].classList.remove('active');
+        titlesEducation[0].classList.add('active');
+      }
+      else if (button.classList.contains('certifications'))
+      {
+        titlesEducation[0].classList.remove('active');
+        titlesEducation[1].classList.add('active');
+      } 
+    });
+
+    if (button.classList.contains('degrees')) 
+    {
+      degreeItems.forEach(function(item) 
+      {
+        item.classList.add('active');
+      });
+      certificationItems.forEach(function(item) 
+      {
+        item.classList.remove('active');
+      });
+    } 
+    else if (button.classList.contains('certifications')) 
+    {
+      certificationItems.forEach(function(item) 
+      {
+        item.classList.add('active');
+      });
+      degreeItems.forEach(function(item) 
+      {
+        item.classList.remove('active');
+      });
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
